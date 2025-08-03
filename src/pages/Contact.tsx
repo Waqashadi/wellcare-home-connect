@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import contactBg from '@/assets/contact-bg.jpg';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -73,13 +74,18 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-medical-blue to-accent-pink py-20 text-white">
-        <div className="container mx-auto px-4">
+      <section 
+        className="relative bg-gradient-to-br from-medical-blue to-accent-pink py-20 text-white bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.8), rgba(236, 72, 153, 0.8)), url(${contactBg})` 
+        }}
+      >
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Contact WellCare
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-xl text-white/90 leading-relaxed animate-fade-in" style={{ animationDelay: '200ms' }}>
               Ready to get started? Contact us today to schedule a consultation 
               and learn how we can help you or your loved one.
             </p>

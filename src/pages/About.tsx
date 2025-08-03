@@ -1,5 +1,6 @@
 import { Users, Award, Heart, Shield, Target, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import aboutBg from '@/assets/about-bg.jpg';
 
 const About = () => {
   const values = [
@@ -49,13 +50,18 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-medical-blue to-accent-pink py-20 text-white">
-        <div className="container mx-auto px-4">
+      <section 
+        className="relative bg-gradient-to-br from-medical-blue to-accent-pink py-20 text-white bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.8), rgba(236, 72, 153, 0.8)), url(${aboutBg})` 
+        }}
+      >
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
               About WellCare Home Nursing
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-xl text-white/90 leading-relaxed animate-fade-in" style={{ animationDelay: '200ms' }}>
               With over a decade of experience, we've been providing compassionate, 
               professional home nursing care to families in our community.
             </p>

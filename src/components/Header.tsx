@@ -20,7 +20,7 @@ const Header = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="bg-background border-b border-border sticky top-0 z-50">
+    <header className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-50 transition-all duration-500 ease-in-out shadow-lg">
       {/* Top Bar */}
       <div className="bg-primary py-2">
         <div className="container mx-auto px-4">
@@ -46,25 +46,29 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3 group">
             <img 
               src={wellcareLogo} 
               alt="WellCare Home Nursing" 
-              className="h-12 w-auto"
+              className="h-12 w-auto transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
+            {navigation.map((item, index) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-foreground hover:text-primary transition-colors font-medium ${
-                  isActive(item.href) ? 'text-primary border-b-2 border-primary' : ''
+                className={`text-foreground hover:text-primary transition-all duration-300 font-medium relative group ${
+                  isActive(item.href) ? 'text-primary' : ''
                 }`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {item.name}
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full ${
+                  isActive(item.href) ? 'w-full' : ''
+                }`}></span>
               </Link>
             ))}
           </nav>
@@ -73,7 +77,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Button 
               asChild
-              className="bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground shadow-lg"
+              className="bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
             >
               <Link to="/contact">Book Consultation</Link>
             </Button>
@@ -94,21 +98,22 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-border">
+          <div className="md:hidden border-t border-border animate-fade-in">
             <nav className="py-4 space-y-4">
-              {navigation.map((item) => (
+              {navigation.map((item, index) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-4 py-2 text-foreground hover:text-primary transition-colors font-medium ${
+                  className={`block px-4 py-2 text-foreground hover:text-primary transition-all duration-300 font-medium animate-fade-in ${
                     isActive(item.href) ? 'text-primary bg-secondary' : ''
                   }`}
+                  style={{ animationDelay: `${index * 50}ms` }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="px-4 pt-2">
+              <div className="px-4 pt-2 animate-fade-in" style={{ animationDelay: '350ms' }}>
                 <Button 
                   asChild
                   className="w-full bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground"
