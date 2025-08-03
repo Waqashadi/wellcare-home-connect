@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -42,7 +43,12 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					pink: {
+						DEFAULT: 'hsl(var(--accent-pink))',
+						foreground: 'hsl(var(--accent-pink-foreground))',
+						light: 'hsl(var(--accent-pink-light))'
+					}
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -51,6 +57,13 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				medical: {
+					blue: 'hsl(var(--medical-blue))',
+					pink: 'hsl(var(--medical-pink))',
+					'light-blue': 'hsl(var(--medical-light-blue))',
+					navy: 'hsl(var(--medical-navy))',
+					gray: 'hsl(var(--medical-gray))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
