@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import wellcareLogo from '@/assets/wellcare-logo.png';
+import wellcareLogo from '../../public/wellcareLogo.png';
 
 const Footer = () => {
   return (

@@ -84,7 +84,7 @@ const Home = () => {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-medical-blue"
+                  className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
                 >
                   <Link to="/services">Our Services</Link>
                 </Button>
@@ -263,7 +263,7 @@ const Home = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-medical-blue"
+                                className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
             >
               <Link to="/contact">Get Started Today</Link>
             </Button>
