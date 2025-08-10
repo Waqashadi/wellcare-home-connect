@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import wellcareLogo from '../../public/wellcareLogo.png';
+import homeNursingLogo2 from '../../public/homeNursingLogo2.jpg';
 
 const Footer = () => {
   return (
@@ -9,28 +9,28 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center ml-2">
               <img 
-                src={wellcareLogo} 
+                src={homeNursingLogo2} 
                 alt="WellCare Home Nursing" 
-                className="h-10 w-auto brightness-0 invert"
+                className="h-16 w-auto rounded-lg hover:scale-105 transition-transform duration-300"
               />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Providing compassionate, professional home nursing care with a commitment to helping you live well every day.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-accent-pink transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a href="#" className="text-gray-300 hover:text-accent-pink hover:scale-110 transition-all duration-300 cursor-pointer">
+                <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-accent-pink transition-colors">
-                <Twitter className="h-5 w-5" />
+              <a href="#" className="text-gray-300 hover:text-accent-pink hover:scale-110 transition-all duration-300 cursor-pointer">
+                <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-accent-pink transition-colors">
-                <Instagram className="h-5 w-5" />
+              <a href="#" className="text-gray-300 hover:text-accent-pink hover:scale-110 transition-all duration-300 cursor-pointer">
+                <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-accent-pink transition-colors">
-                <Linkedin className="h-5 w-5" />
+              <a href="#" className="text-gray-300 hover:text-accent-pink hover:scale-110 transition-all duration-300 cursor-pointer">
+                <Linkedin className="h-6 w-6" />
               </a>
             </div>
           </div>
