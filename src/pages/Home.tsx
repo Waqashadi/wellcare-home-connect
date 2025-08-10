@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Heart, Shield, Clock, Users, Star, CheckCircle, Phone, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
   const services = [
@@ -55,17 +56,98 @@ const Home = () => {
     }
   ];
 
+  // Hero background slider images with alt text (local assets from public/)
+  const heroImages = [
+    {
+      src: '/herobg (1).jpg',
+      alt: 'Nurse providing compassionate home care to an elderly patient'
+    },
+    {
+      src: '/herobg (2).jpg',
+      alt: 'Home nursing consultation with medical professional and patient'
+    },
+    {
+      src: '/herobg (3).jpg',
+      alt: 'Caregiver assisting senior with supportive and friendly attention'
+    },
+  ] as const;
+
+  const [activeHeroIndex, setActiveHeroIndex] = useState(0);
+
+  // Autoplay background change
+  useEffect(() => {
+    // Preload images for smoother transitions
+    heroImages.forEach((img) => {
+      const preload = new Image();
+      preload.src = encodeURI(img.src);
+    });
+
+    const intervalId = setInterval(() => {
+      setActiveHeroIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // 5s per slide
+    return () => clearInterval(intervalId);
+  }, [heroImages.length]);
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-medical-blue via-medical-blue to-medical-pink py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
+      {/* Hero Section with background slider */}
+      <section className="relative py-20 lg:py-32 overflow-hidden min-h-[80vh]">
+        {/* Sliding background images */}
+        <div className="absolute inset-0">
+          {heroImages.map((imgData, index) => (
+            <img
+              key={imgData.src}
+              src={encodeURI(imgData.src)}
+              alt={imgData.alt}
+              loading={index === activeHeroIndex ? 'eager' : 'lazy'}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                index === activeHeroIndex ? 'opacity-100 kenburns' : 'opacity-0'
+              }`}
+              aria-hidden={index !== activeHeroIndex}
+              onError={(e) => {
+                const target = e.currentTarget as HTMLImageElement;
+                // First fallback to a high-quality placeholder (distinct per index)
+                const fallbacks = [
+                  '/homeNursingLogo2.jpg',
+                  '/placeholder.svg',
+                  '/favicon.ico',
+                ];
+                if (!(target as any)._fallbackStage) {
+                  (target as any)._fallbackStage = 1;
+                  target.src = encodeURI(fallbacks[index % fallbacks.length]);
+                } else if ((target as any)._fallbackStage === 1) {
+                  (target as any)._fallbackStage = 2;
+                  target.src = encodeURI('/placeholder.svg');
+                }
+              }}
+            />
+          ))}
+          {/* Gradient overlay for brand tint and contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-medical-blue/60 via-medical-blue/40 to-medical-pink/40" />
+          {/* Subtle dark overlay for text legibility */}
+          <div className="absolute inset-0 bg-black/15" />
+        </div>
+
+        {/* Dots indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveHeroIndex(index)}
+              className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                index === activeHeroIndex ? 'bg-white' : 'bg-white/50 hover:bg-white/80'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-shadow-lg">
                 Compassionate
-                <span className="block text-accent-pink">Home Nursing</span>
+                <span className="block text-accent-pink text-shadow-lg">Home Nursing</span>
                 Care
               </h1>
               <p className="text-xl text-white/90 leading-relaxed">
