@@ -301,13 +301,13 @@ const Home = () => {
                 <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-pink/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <CardContent className="relative z-10 p-8 text-center">
                   <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-accent-pink/20">
-                    <service.icon className="h-8 w-8 text-accent-pink transition-transform duration-300 group-hover:scale-110" />
+                    <service.icon className="h-8 w-8 text-accent-pink transition-transform duration-300 group-hover:scale-110 accent-on-hover-pink" />
                   </div>
-                  <h3 className="text-xl font-bold text-medical-blue mb-2 transition-colors duration-300 group-hover:text-medical-navy">
+                  <h3 className="text-xl font-bold text-medical-blue mb-2 transition-colors duration-300 group-hover:text-white">
                     {service.title}
                   </h3>
-                  <span className="mb-4 block h-0.5 w-8 mx-auto bg-accent-pink transform origin-center transition-transform duration-300 group-hover:scale-x-125" />
-                  <p className="text-medical-gray leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">
+                  <span className="mb-4 block h-0.5 w-8 mx-auto bg-accent-pink transform origin-center transition-transform duration-300 group-hover:scale-x-125 accent-on-hover-pink" />
+                  <p className="text-medical-gray leading-relaxed transition-colors duration-300 group-hover:text-white/90">
                     {service.description}
                   </p>
                 </CardContent>
@@ -354,8 +354,14 @@ const Home = () => {
               </div>
             </div>
             <div className="lg:pl-8">
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
-                <h3 className="text-2xl font-bold text-medical-blue mb-6">
+              <div className="mb-8 bg-white rounded-2xl p-8 shadow-xl">
+              <img
+                  src={encodeURI('/herobg (2).jpg')}
+                  alt="WellCare nurse providing attentive home care"
+                  loading="lazy"
+                  className="w-full max-h-[380px] rounded-2xl object-cover shadow-2xl ring-1 ring-black/5"
+                />
+                <h3 className="text-2xl mt-4 font-bold text-medical-blue mb-6">
                   Request a Free Consultation
                 </h3>
                 <p className="text-medical-gray mb-6">

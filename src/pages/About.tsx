@@ -105,7 +105,13 @@ const About = () => {
             </div>
             <div className="lg:pl-8">
               <div className="bg-medical-light-blue rounded-2xl p-8">
-                <div className="grid grid-cols-2 gap-6 text-center">
+              <img
+                  src={encodeURI('/herobg (2).jpg')}
+                  alt="WellCare nurse providing attentive home care"
+                  loading="lazy"
+                  className="w-full max-h-[380px] rounded-2xl object-cover shadow-2xl ring-1 ring-black/5"
+                />
+                <div className="grid grid-cols-2 mt-4 gap-6 text-center">
                   <div>
                     <div className="text-3xl font-bold text-medical-blue mb-2">10+</div>
                     <div className="text-medical-gray">Years Serving</div>

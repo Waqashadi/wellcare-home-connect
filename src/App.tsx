@@ -13,6 +13,8 @@ import Nurses from "./pages/Nurses";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import WhatsAppButton from "./components/WhatsAppButton";
+import ScrollManager from "./components/ScrollManager";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="flex flex-col min-h-screen">
+          <ScrollManager />
           <Header />
           <main className="flex-1">
             <Routes>
@@ -37,6 +40,8 @@ const App = () => (
             </Routes>
           </main>
           <Footer />
+          {/* Floating WhatsApp contact button (set VITE_WHATSAPP_NUMBER in .env to override) */}
+          <WhatsAppButton />
         </div>
       </BrowserRouter>
     </TooltipProvider>
