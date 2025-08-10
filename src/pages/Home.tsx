@@ -2,7 +2,56 @@ import { Link } from 'react-router-dom';
 import { Heart, Shield, Clock, Users, Star, CheckCircle, Phone, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+// Smooth easing for counters
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+type AnimatedCounterProps = {
+  target: number;
+  suffix?: string;
+  durationMs?: number;
+  start?: boolean; // when true, begin the animation
+  className?: string;
+};
+
+function AnimatedCounter({
+  target,
+  suffix = '',
+  durationMs = 1500,
+  start = false,
+  className,
+}: AnimatedCounterProps) {
+  const [value, setValue] = useState(0);
+  const hasAnimatedRef = useRef(false);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!start || hasAnimatedRef.current) return;
+    hasAnimatedRef.current = true;
+    const startTime = performance.now();
+
+    const step = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / durationMs);
+      const eased = easeOutCubic(progress);
+      const current = Math.round(eased * target);
+      setValue(current);
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(step);
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(step);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [start, target, durationMs]);
+
+  return <span className={className}>{value.toLocaleString()}{suffix}</span>;
+}
 
 const Home = () => {
   const services = [
@@ -29,10 +78,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { number: "500+", label: "Families Served" },
-    { number: "50+", label: "Certified Nurses" },
-    { number: "10+", label: "Years Experience" },
-    { number: "99%", label: "Satisfaction Rate" }
+    { target: 500, suffix: "+", label: "Families Served" },
+    { target: 50, suffix: "+", label: "Certified Nurses" },
+    { target: 10, suffix: "+", label: "Years Experience" },
+    { target: 99, suffix: "%", label: "Satisfaction Rate" }
   ];
 
   const testimonials = [
@@ -73,6 +122,8 @@ const Home = () => {
   ] as const;
 
   const [activeHeroIndex, setActiveHeroIndex] = useState(0);
+  const statsRef = useRef<HTMLDivElement | null>(null);
+  const [statsInView, setStatsInView] = useState(false);
 
   // Autoplay background change
   useEffect(() => {
@@ -87,6 +138,24 @@ const Home = () => {
     }, 5000); // 5s per slide
     return () => clearInterval(intervalId);
   }, [heroImages.length]);
+
+  // Start counters when stats section enters the viewport
+  useEffect(() => {
+    if (!statsRef.current) return;
+    const element = statsRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setStatsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -190,13 +259,17 @@ const Home = () => {
 
       {/* Stats Section */}
       <section className="py-16 bg-medical-light-blue">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4" ref={statsRef}>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-medical-blue mb-2">
-                  {stat.number}
-                </div>
+                <AnimatedCounter
+                  target={stat.target}
+                  suffix={stat.suffix}
+                  start={statsInView}
+                  durationMs={4000}
+                  className="text-4xl lg:text-5xl font-bold text-medical-blue mb-2 inline-block"
+                />
                 <div className="text-medical-gray font-medium">
                   {stat.label}
                 </div>
@@ -221,15 +294,20 @@ const Home = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <service.icon className="h-8 w-8 text-accent-pink" />
+              <Card
+                key={index}
+                className="group relative overflow-hidden border-0 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:ring-1 hover:ring-accent-pink/40"
+              >
+                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-pink/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <CardContent className="relative z-10 p-8 text-center">
+                  <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-accent-pink/20">
+                    <service.icon className="h-8 w-8 text-accent-pink transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <h3 className="text-xl font-bold text-medical-blue mb-4">
+                  <h3 className="text-xl font-bold text-medical-blue mb-2 transition-colors duration-300 group-hover:text-medical-navy">
                     {service.title}
                   </h3>
-                  <p className="text-medical-gray leading-relaxed">
+                  <span className="mb-4 block h-0.5 w-8 mx-auto bg-accent-pink transform origin-center transition-transform duration-300 group-hover:scale-x-125" />
+                  <p className="text-medical-gray leading-relaxed transition-colors duration-300 group-hover:text-foreground/80">
                     {service.description}
                   </p>
                 </CardContent>
