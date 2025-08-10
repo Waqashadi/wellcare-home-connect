@@ -128,7 +128,7 @@ const Header = () => {
 
                   {item.name === 'Services' && (
                     <div
-                      className={`${isServicesOpen ? 'visible opacity-100' : 'invisible opacity-0'} absolute left-0 top-full mt-3 w-[320px] bg-white rounded-xl shadow-2xl ring-1 ring-black/5 p-3 transition-opacity duration-200`}
+                      className={`${isServicesOpen ? 'visible opacity-100' : 'invisible opacity-0'} absolute left-0 top-full mt-3 w-[360px] bg-white rounded-xl shadow-2xl ring-1 ring-black/5 p-3 transition-opacity duration-200`}
                       onMouseEnter={handleServicesEnter}
                       onMouseLeave={handleServicesLeave}
                     >
@@ -146,7 +146,7 @@ const Header = () => {
                           <Link
                             key={s.id}
                             to={`/services#${s.id}`}
-                            className="px-3 py-2 rounded-lg text-sm text-medical-blue hover:bg-medical-blue hover:text-white transition-colors"
+                            className="px-4 py-3 rounded-lg text-lg text-medical-blue hover:bg-medical-blue hover:text-white transition-colors"
                           >
                             {s.label}
                           </Link>
@@ -199,7 +199,7 @@ const Header = () => {
                             <Link
                               key={s.id}
                               to={`/services#${s.id}`}
-                              className="block px-3 py-2 rounded-lg text-sm text-medical-blue hover:bg-medical-blue hover:text-white transition-colors"
+                              className="block px-4 py-3 rounded-lg text-lg text-medical-blue hover:bg-medical-blue hover:text-white transition-colors"
                               onClick={() => { setIsMenuOpen(false); setIsServicesMobileOpen(false); }}
                             >
                               {s.label}
