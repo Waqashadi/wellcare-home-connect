@@ -16,10 +16,9 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Locations', href: '/nurses' },
-    { name: 'Appointment', href: '/contact' },
+    { name: 'Locations', href: '/locations' },
+    { name: 'Appointment', href: '/appointment' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -81,12 +80,14 @@ const Header = () => {
                </div>
               
               {/* Make Appointment Button */}
-              <Button 
-                className="bg-accent-pink hover:bg-pink-600 text-white font-bold p-6 rounded-lg text-lg"
-              >
-                <span className="hidden sm:inline">Make Appointment</span>
-                <span className="sm:hidden">Appointment</span>
-              </Button>
+              <a href="mailto:info@wellcarehomenursing.com" className="inline-flex">
+                <Button 
+                  className="bg-accent-pink hover:bg-pink-600 text-white font-bold p-6 rounded-lg text-lg"
+                >
+                  <span className="hidden sm:inline">Book Appointment</span>
+                  <span className="sm:hidden">Book Appointment</span>
+                </Button>
+              </a>
             </div>
           </div>
         </div>

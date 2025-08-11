@@ -224,13 +224,13 @@ const Home = () => {
                 Our certified nurses provide personalized care to help you live well every day.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  asChild
-                  size="lg"
-                  className="bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground shadow-xl"
-                >
-                  <Link to="/contact">Schedule Consultation</Link>
-                </Button>
+                 <Button 
+                   asChild
+                   size="lg"
+                   className="bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground shadow-xl"
+                 >
+                   <a href="mailto:info@wellcarehomenursing.com?subject=Consultation%20Request">Schedule Consultation</a>
+                 </Button>
                 <Button 
                   asChild
                   size="lg"
@@ -367,13 +367,13 @@ const Home = () => {
                 <p className="text-medical-gray mb-6">
                   Let us assess your needs and create a personalized care plan for you or your loved one.
                 </p>
-                <Button 
-                  asChild
-                  size="lg"
-                  className="w-full bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground"
-                >
-                  <Link to="/contact">Schedule Now</Link>
-                </Button>
+                 <Button 
+                   asChild
+                   size="lg"
+                   className="w-full bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground"
+                 >
+                   <a href="mailto:info@wellcarehomenursing.com?subject=Schedule%20Consultation">Schedule Now</a>
+                 </Button>
               </div>
             </div>
           </div>
@@ -426,12 +426,12 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              asChild
-              size="lg"
-              variant="outline"
-                                className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
+               asChild
+               size="lg"
+               variant="outline"
+               className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
             >
-              <Link to="/contact">Get Started Today</Link>
+              <a href="mailto:info@wellcarehomenursing.com?subject=Get%20Started">Get Started Today</a>
             </Button>
             <Button 
               asChild

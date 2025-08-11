@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Locations from "./pages/Locations";
-import Contact from "./pages/Contact";
+import Appointment from "./pages/Appointment";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -32,8 +32,8 @@ const App = () => (
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/nurses" element={<Locations />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/locations" element={<Locations />} />
+              <Route path="/appointment" element={<Appointment />} />
               <Route path="/blog" element={<Blog />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

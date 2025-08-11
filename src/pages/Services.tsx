@@ -327,9 +327,9 @@ const Services = () => {
               asChild
               size="lg"
               variant="outline"
-                                className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
+              className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
             >
-              <Link to="/contact">Schedule Consultation</Link>
+              <a href="mailto:info@wellcarehomenursing.com?subject=Schedule%20Consultation">Schedule Consultation</a>
             </Button>
             <Button 
               asChild
