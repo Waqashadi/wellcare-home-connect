@@ -30,23 +30,23 @@ const Appointment = () => {
       <section className="py-16 bg-medical-light-blue">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center border-0 shadow-lg">
+            <Card className="group text-center border-0 shadow-lg">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Mail className="h-8 w-8 text-accent-pink" />
+                <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors group-hover:bg-accent-pink">
+                  <Mail className="h-8 w-8 text-accent-pink transition-colors group-hover:text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-medical-blue mb-2">Email</h3>
                 <p className="text-medical-gray mb-6">We usually reply within a few hours.</p>
                 <Button asChild className="bg-accent-pink hover:bg-accent-pink/90">
-                  <a href={mailtoHref}>Email {APPOINTMENT_EMAIL}</a>
+                  <a href={mailtoHref}>Mail Us</a>
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-0 shadow-lg">
+            <Card className="group text-center border-0 shadow-lg">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Phone className="h-8 w-8 text-accent-pink" />
+                <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors group-hover:bg-accent-pink">
+                  <Phone className="h-8 w-8 text-accent-pink transition-colors group-hover:text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-medical-blue mb-2">Call</h3>
                 <p className="text-medical-gray mb-6">For fastest response during business hours.</p>
@@ -56,14 +56,14 @@ const Appointment = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-0 shadow-lg">
+            <Card className="group text-center border-0 shadow-lg">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <MessageCircle className="h-8 w-8 text-accent-pink" />
+                <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors group-hover:bg-accent-pink">
+                  <MessageCircle className="h-8 w-8 text-accent-pink transition-colors group-hover:text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-medical-blue mb-2">WhatsApp</h3>
                 <p className="text-medical-gray mb-6">Chat with us on WhatsApp right away.</p>
-                <Button asChild variant="outline" className="border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white">
+                <Button asChild className="bg-[#25D366] hover:bg-[#1EBE59] text-white">
                   <a href={waHref} target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
                 </Button>
               </CardContent>

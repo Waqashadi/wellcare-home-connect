@@ -13,7 +13,7 @@ const Blog = () => {
     date: "March 15, 2024",
     readTime: "8 min read",
     category: "Recovery Care",
-    image: "/api/placeholder/600/400"
+    image: "/herobg (1).jpg"
   };
 
   const blogPosts = [
@@ -24,7 +24,8 @@ const Blog = () => {
       author: "Jennifer Thompson",
       date: "March 12, 2024",
       readTime: "6 min read",
-      category: "Insurance"
+      category: "Insurance",
+      image: "/mission.jpg"
     },
     {
       id: 3,
@@ -33,7 +34,8 @@ const Blog = () => {
       author: "Michael Rodriguez",
       date: "March 8, 2024",
       readTime: "7 min read",
-      category: "Chronic Care"
+      category: "Chronic Care",
+      image: "/herobg (2).jpg"
     },
     {
       id: 4,
@@ -42,7 +44,8 @@ const Blog = () => {
       author: "Lisa Chen",
       date: "March 5, 2024",
       readTime: "5 min read",
-      category: "Home Care"
+      category: "Home Care",
+      image: "/herobg (3).jpg"
     },
     {
       id: 5,
@@ -51,7 +54,8 @@ const Blog = () => {
       author: "Robert Johnson",
       date: "March 1, 2024",
       readTime: "9 min read",
-      category: "Wound Care"
+      category: "Wound Care",
+      image: "/herobg (1).jpg"
     },
     {
       id: 6,
@@ -60,7 +64,8 @@ const Blog = () => {
       author: "Maria Gonzalez",
       date: "February 28, 2024",
       readTime: "6 min read",
-      category: "Medication"
+      category: "Medication",
+      image: "/mission.jpg"
     },
     {
       id: 7,
@@ -69,7 +74,8 @@ const Blog = () => {
       author: "Dr. Sarah Martinez",
       date: "February 25, 2024",
       readTime: "8 min read",
-      category: "Safety"
+      category: "Safety",
+      image: "/herobg (2).jpg"
     }
   ];
 
@@ -117,10 +123,8 @@ const Blog = () => {
           
           <Card className="border-0 shadow-xl overflow-hidden">
             <div className="grid lg:grid-cols-2">
-              <div className="bg-gradient-to-br from-medical-blue/10 to-accent-pink/10 flex items-center justify-center p-8">
-                <div className="w-full h-64 lg:h-80 bg-medical-blue/20 rounded-lg flex items-center justify-center">
-                  <span className="text-medical-blue text-lg">Featured Article Image</span>
-                </div>
+              <div className="relative h-64 lg:h-80 overflow-hidden">
+                <img src={featuredPost.image} alt={featuredPost.title} className="h-full w-full object-cover" />
               </div>
               <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center space-x-4 mb-4">
@@ -201,8 +205,8 @@ const Blog = () => {
             {blogPosts.map((post, index) => (
               <Card key={post.id} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="p-0">
-                  <div className="bg-gradient-to-br from-medical-blue/10 to-accent-pink/10 h-48 flex items-center justify-center">
-                    <span className="text-medical-blue">Article Image</span>
+                  <div className="relative h-48 overflow-hidden">
+                    <img src={post.image as any} alt={post.title} className="h-full w-full object-cover" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
