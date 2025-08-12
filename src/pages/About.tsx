@@ -1,6 +1,7 @@
 import { Users, Award, Heart, Shield, Target, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import aboutBg from '@/assets/about-bg.jpg';
+import AppointmentButton from '@/components/AppointmentButton';
 
 const About = () => {
   const values = [
@@ -251,6 +252,33 @@ const About = () => {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Ready to Experience Our Care?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
+            Contact us today to schedule a consultation and learn how our experienced team 
+            can provide the care you or your loved one deserves.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <AppointmentButton 
+              type="consultation"
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-medical-blue"
+            />
+            <AppointmentButton 
+              type="appointment"
+              size="lg"
+              variant="secondary"
+              className="bg-white text-medical-blue hover:bg-white/90"
+            />
           </div>
         </div>
       </section>

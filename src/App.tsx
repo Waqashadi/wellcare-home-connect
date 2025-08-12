@@ -14,6 +14,7 @@ import Appointment from "./pages/Appointment";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/WhatsAppButton";
+import CallButton from "./components/CallButton";
 import ScrollManager from "./components/ScrollManager";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,8 @@ const App = () => (
             </Routes>
           </main>
           <Footer />
+          {/* Floating call button (set VITE_PHONE_NUMBER in .env to override) */}
+          <CallButton variant="floating" />
           {/* Floating WhatsApp contact button (set VITE_WHATSAPP_NUMBER in .env to override) */}
           <WhatsAppButton />
         </div>

@@ -48,7 +48,7 @@ const Header = () => {
                 </div>
                 <div>
                   <div className="font-bold text-blue-900 text-lg">Our Locations</div>
-                  <div className="text-gray-600 text-md">Lahore, Islamabad</div>
+                  <div className="text-gray-600 text-md">Rawalpindi, Islamabad</div>
                 </div>
               </div>
               
@@ -59,7 +59,7 @@ const Header = () => {
                 </div>
                 <div>
                   <div className="font-bold text-blue-900 text-lg">Phone Number</div>
-                  <div className="text-gray-600 text-md">(+92) 300 841 2981</div>
+                  <div className="text-gray-600 text-md">0310-688-1824</div>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ const Header = () => {
                </div>
               
               {/* Make Appointment Button */}
-              <a href="mailto:info@wellcarehomenursing.com" className="inline-flex">
+              <a href="infowellcares@gmail.com" className="inline-flex">
                 <Button 
                   className="bg-accent-pink hover:bg-pink-600 text-white font-bold p-6 rounded-lg text-lg"
                 >

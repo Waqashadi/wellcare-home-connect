@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import servicesBg from '@/assets/services-bg.jpg';
 import { ServiceSectionBase } from '@/components/services';
+import AppointmentButton from '@/components/AppointmentButton';
 
 const Services = () => {
   const mainServices = [
@@ -323,21 +324,18 @@ const Services = () => {
             can benefit you or your loved one.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              asChild
+            <AppointmentButton 
+              type="consultation"
               size="lg"
               variant="outline"
-              className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
-            >
-              <a href="mailto:info@wellcarehomenursing.com?subject=Schedule%20Consultation">Schedule Consultation</a>
-            </Button>
-            <Button 
-              asChild
+              className="border-white text-white hover:bg-white hover:text-medical-blue"
+            />
+            <AppointmentButton 
+              type="appointment"
               size="lg"
+              variant="secondary"
               className="bg-white text-medical-blue hover:bg-white/90"
-            >
-              <Link to="/nurses">Meet Our Team</Link>
-            </Button>
+            />
           </div>
         </div>
       </section>

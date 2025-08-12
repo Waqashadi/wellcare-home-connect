@@ -3,6 +3,7 @@ import { Heart, Shield, Clock, Users, Star, CheckCircle, Phone, ArrowRight } fro
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useEffect, useRef, useState } from 'react';
+import AppointmentButton from '@/components/AppointmentButton';
 
 // Smooth easing for counters
 function easeOutCubic(t: number): number {
@@ -224,21 +225,17 @@ const Home = () => {
                 Our certified nurses provide personalized care to help you live well every day.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                 <Button 
-                   asChild
-                   size="lg"
-                   className="bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground shadow-xl"
-                 >
-                   <a href="mailto:info@wellcarehomenursing.com?subject=Consultation%20Request">Schedule Consultation</a>
-                 </Button>
-                <Button 
-                  asChild
+                <AppointmentButton 
+                  type="consultation"
+                  size="lg"
+                  variant="primary"
+                />
+                <AppointmentButton 
+                  type="appointment"
                   size="lg"
                   variant="outline"
-                  className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
-                >
-                  <Link to="/services">Our Services</Link>
-                </Button>
+                  className="border-white text-white hover:bg-white hover:text-medical-blue"
+                />
               </div>
             </div>
             <div className="lg:text-right">
@@ -249,7 +246,7 @@ const Home = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-medical-blue">24/7 Emergency Care</h3>
                   <p className="text-medical-gray">Call us anytime for immediate assistance</p>
-                  <p className="text-3xl font-bold text-medical-blue">(555) 123-4567</p>
+                  <p className="text-3xl font-bold text-medical-blue">0310-688-1824</p>
                 </div>
               </div>
             </div>
@@ -372,7 +369,7 @@ const Home = () => {
                    size="lg"
                    className="w-full bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground"
                  >
-                   <a href="mailto:info@wellcarehomenursing.com?subject=Schedule%20Consultation">Schedule Now</a>
+                   <a href="mailto:infowellcares@gmail.com?subject=Schedule%20Consultation">Schedule Now</a>
                  </Button>
               </div>
             </div>
@@ -431,7 +428,7 @@ const Home = () => {
                variant="outline"
                className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
             >
-              <a href="mailto:info@wellcarehomenursing.com?subject=Get%20Started">Get Started Today</a>
+                             <a href="mailto:infowellcares@gmail.com?subject=Get%20Started">Get Started Today</a>
             </Button>
             <Button 
               asChild

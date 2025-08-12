@@ -1,5 +1,5 @@
 type WhatsAppButtonProps = {
-  phone?: string; // E.164 without '+' preferred (e.g., 15551234567)
+  phone?: string; // E.164 without '+' preferred (e.g., 03106881824)
   message?: string;
   className?: string;
 };
@@ -14,7 +14,7 @@ export default function WhatsAppButton({
   className,
 }: WhatsAppButtonProps) {
   const envPhone = (import.meta as any)?.env?.VITE_WHATSAPP_NUMBER as string | undefined;
-  const normalized = sanitizePhone(phone || envPhone || "15551234567");
+  const normalized = sanitizePhone(phone || envPhone || "03106881824");
   const url = `https://wa.me/${normalized}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -23,7 +23,7 @@ export default function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className={`fixed z-[9999] inline-flex items-center justify-center h-14 w-14 rounded-full bg-[#25D366] hover:bg-[#1EBE59] transition-all shadow-xl shadow-[#25D366]/30 ring-1 ring-black/5 ${className || ""}`}
+      className={`fixed z-[9999] inline-flex items-center justify-center h-14 w-14 rounded-full bg-[#25D366] hover:bg-[#1EBE59] transition-all shadow-xl mb-16  shadow-[#25D366]/30 ring-1 ring-black/5 ${className || ""}`}
       style={{
         bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))",
         right: "calc(1rem + env(safe-area-inset-right, 0px))",

@@ -2,10 +2,10 @@ import { Mail, Phone, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-const APPOINTMENT_EMAIL = 'info@wellcarehomenursing.com';
-const APPOINTMENT_PHONE_DISPLAY = '(+92) 300 841 2981';
-const APPOINTMENT_PHONE_TEL = '+923008412981';
-const WHATSAPP_NUMBER_SANITIZED = '923008412981';
+const APPOINTMENT_EMAIL = 'infowellcares@gmail.com';
+const APPOINTMENT_PHONE_DISPLAY = '0310-688-1824';
+const APPOINTMENT_PHONE_TEL = '+923106881824';
+const WHATSAPP_NUMBER_SANITIZED = '923106881824';
 
 const Appointment = () => {
   const mailtoHref = `mailto:${APPOINTMENT_EMAIL}?subject=${encodeURIComponent('Appointment Request')}&body=${encodeURIComponent('Hello WellCare Team,%0D%0A%0D%0AI would like to book an appointment. Please contact me back.%0D%0A%0D%0AThanks!')}`;

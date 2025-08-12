@@ -86,17 +86,17 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="h-4 w-4 mt-1 text-accent-pink" />
                 <div>
-                  <p className="text-gray-300 text-sm">(555) 123-4567</p>
+                  <p className="text-gray-300 text-sm">0310-688-1824</p>
                   <p className="text-gray-400 text-xs">24/7 Emergency Line</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="h-4 w-4 mt-1 text-accent-pink" />
-                <p className="text-gray-300 text-sm">info@wellcarehomenursing.com</p>
+                <p className="text-gray-300 text-sm">infowellcares@gmail.com</p>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 mt-1 text-accent-pink" />
-                <p className="text-gray-300 text-sm">123 Healthcare Ave<br />Suite 100<br />Your City, ST 12345</p>
+                <p className="text-gray-300 text-sm">Healthcare <br />Rawalpindi, Islamabad</p>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock className="h-4 w-4 mt-1 text-accent-pink" />

@@ -272,7 +272,7 @@ const Blog = () => {
                 className="flex-1 px-4 py-3 rounded-lg text-medical-blue"
               />
               <Button 
-                className="bg-white text-medical-blue hover:bg-white/90"
+                className="bg-white py-6 text-medical-blue hover:bg-white/90"
               >
                 Subscribe
               </Button>
