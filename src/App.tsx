@@ -9,10 +9,12 @@ import Index from "./pages/Index";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Nurses from "./pages/Nurses";
-import Contact from "./pages/Contact";
+import Locations from "./pages/Locations";
+import Appointment from "./pages/Appointment";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import WhatsAppButton from "./components/WhatsAppButton";
+import ScrollManager from "./components/ScrollManager";
 
 const queryClient = new QueryClient();
 
@@ -23,20 +25,23 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="flex flex-col min-h-screen">
+          <ScrollManager />
           <Header />
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/nurses" element={<Nurses />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/locations" element={<Locations />} />
+              <Route path="/appointment" element={<Appointment />} />
               <Route path="/blog" element={<Blog />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <Footer />
+          {/* Floating WhatsApp contact button (set VITE_WHATSAPP_NUMBER in .env to override) */}
+          <WhatsAppButton />
         </div>
       </BrowserRouter>
     </TooltipProvider>

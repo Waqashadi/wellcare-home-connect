@@ -118,11 +118,67 @@
 }
 
 @layer base {
+  html {
+    font-size: 18px; /* Increase base font size (was 16px) */
+  }
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Subtle Ken Burns effect for hero images */
+@keyframes kenburns-zoom-pan {
+  0% {
+    transform: scale(1.05) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.15) translate3d(2%, 2%, 0);
+  }
+}
+
+.kenburns {
+  animation: kenburns-zoom-pan 12s ease-in-out both;
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  }
+  .text-shadow {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  }
+  .text-shadow-lg {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.65);
+  }
+}
+
+/* Global card hover: primary blue background and light text */
+@layer components {
+  .scroll-mt-header {
+    scroll-margin-top: 6rem;
+  }
+  .card:hover {
+    background-color: hsl(210 80% 25%);
+    color: hsl(0 0% 98%);
+  }
+  .card:hover .accent-on-hover-pink {
+    color: hsl(var(--accent-pink));
+    fill: hsl(var(--accent-pink));
+    stroke: hsl(var(--accent-pink));
+  }
+  .card:hover h1,
+  .card:hover h2,
+  .card:hover h3,
+  .card:hover p,
+  .card:hover span,
+  .card:hover div,
+  .card:hover svg {
+    color: hsl(0 0% 98%);
+    fill: hsl(0 0% 98%);
+    stroke: hsl(0 0% 98%);
   }
 }

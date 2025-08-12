@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import servicesBg from '@/assets/services-bg.jpg';
+import { ServiceSectionBase } from '@/components/services';
 
 const Services = () => {
   const mainServices = [
@@ -122,47 +123,110 @@ const Services = () => {
           </div>
         </div>
       </section>
+      {/* Dedicated Sections */}
+      <ServiceSectionBase
+        id="home-injection"
+        title="Home Injection Services"
+        description="Safe, hygienic, and professional injection administration in the comfort of your home by licensed nurses."
+        features={[
+          'Intramuscular and subcutaneous injections',
+          'Antibiotic and vitamin shots',
+          'Insulin administration and education',
+          'Aseptic technique and sharps safety',
+        ]}
+        imageSrc="/herobg (1).jpg"
+      />
 
-      {/* Main Services Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
-              Core Nursing Services
-            </h2>
-            <p className="text-xl text-medical-gray max-w-3xl mx-auto">
-              Our certified nurses provide a full range of medical services in the comfort 
-              and privacy of your own home.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mainServices.map((service, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mb-6">
-                    <service.icon className="h-8 w-8 text-accent-pink" />
-                  </div>
-                  <h3 className="text-xl font-bold text-medical-blue mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-medical-gray mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-medical-gray">
-                        <div className="w-2 h-2 bg-accent-pink rounded-full mr-3"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceSectionBase
+        id="home-doctor"
+        title="Home Doctor Visit"
+        description="Experienced physicians available for in-home consultations, assessments, and prescriptions."
+        features={[
+          'Comprehensive physical exams',
+          'Acute and chronic condition management',
+          'Care coordination and referrals',
+          'On-site diagnostics guidance',
+        ]}
+        imageSrc="/herobg (2).jpg"
+      />
+
+      <ServiceSectionBase
+        id="home-elderly"
+        title="Home Elderly Care"
+        description="Dignified, compassionate support for seniors to promote independence and safety at home."
+        features={[
+          'ADL assistance and mobility support',
+          'Fall risk reduction and monitoring',
+          'Medication reminders',
+          'Family updates and education',
+        ]}
+        imageSrc="/herobg (3).jpg"
+      />
+
+      <ServiceSectionBase
+        id="home-icu"
+        title="Home ICU Care"
+        description="Advanced critical care setup at home with trained staff and monitoring equipment."
+        features={[
+          'Ventilator and oxygen therapy support',
+          'Cardiac monitoring',
+          'Skilled nursing 24/7',
+          'Emergency escalation protocols',
+        ]}
+        imageSrc="/mission.jpg"
+      />
+
+      <ServiceSectionBase
+        id="home-lab"
+        title="Home Lab Test Services"
+        description="Convenient at-home sample collection for a wide range of laboratory tests."
+        features={[
+          'Blood, urine, and swab collections',
+          'Partnered accredited labs',
+          'Fast results turnaround',
+          'Doctor review and follow-up',
+        ]}
+        imageSrc="/herobg (2).jpg"
+      />
+
+      <ServiceSectionBase
+        id="home-equipment"
+        title="Home Medical Equipment"
+        description="Rental and purchase of high-quality medical equipment with setup and training."
+        features={[
+          'Hospital beds, wheelchairs, walkers',
+          'Suction machines and nebulizers',
+          'CPAP/BiPAP and oxygen concentrators',
+          'Delivery, setup, and maintenance',
+        ]}
+        imageSrc="/herobg (1).jpg"
+      />
+
+      <ServiceSectionBase
+        id="home-nursing"
+        title="Home Nursing Care"
+        description="Comprehensive nursing services tailored to your medical needs at home."
+        features={[
+          'Vital monitoring and care plans',
+          'Wound and catheter care',
+          'Medication administration',
+          'Education and caregiver support',
+        ]}
+        imageSrc="/herobg (3).jpg"
+      />
+
+      <ServiceSectionBase
+        id="home-pharmacy"
+        title="Home Pharmacy Services"
+        description="Doorstep delivery of prescribed medicines and pharmacy counseling."
+        features={[
+          'Prescription review',
+          'Drug interaction checks',
+          'Adherence packaging (e.g., blister packs)',
+          'Scheduled refills and delivery',
+        ]}
+        imageSrc="/mission.jpg"
+      />
 
       {/* Specialty Services Section */}
       <section className="py-20 bg-medical-light-blue">
@@ -263,9 +327,9 @@ const Services = () => {
               asChild
               size="lg"
               variant="outline"
-                                className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
+              className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
             >
-              <Link to="/contact">Schedule Consultation</Link>
+              <a href="mailto:info@wellcarehomenursing.com?subject=Schedule%20Consultation">Schedule Consultation</a>
             </Button>
             <Button 
               asChild

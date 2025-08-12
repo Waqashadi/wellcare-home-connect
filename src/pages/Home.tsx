@@ -2,6 +2,56 @@ import { Link } from 'react-router-dom';
 import { Heart, Shield, Clock, Users, Star, CheckCircle, Phone, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useEffect, useRef, useState } from 'react';
+
+// Smooth easing for counters
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+type AnimatedCounterProps = {
+  target: number;
+  suffix?: string;
+  durationMs?: number;
+  start?: boolean; // when true, begin the animation
+  className?: string;
+};
+
+function AnimatedCounter({
+  target,
+  suffix = '',
+  durationMs = 1500,
+  start = false,
+  className,
+}: AnimatedCounterProps) {
+  const [value, setValue] = useState(0);
+  const hasAnimatedRef = useRef(false);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (!start || hasAnimatedRef.current) return;
+    hasAnimatedRef.current = true;
+    const startTime = performance.now();
+
+    const step = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / durationMs);
+      const eased = easeOutCubic(progress);
+      const current = Math.round(eased * target);
+      setValue(current);
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(step);
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(step);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [start, target, durationMs]);
+
+  return <span className={className}>{value.toLocaleString()}{suffix}</span>;
+}
 
 const Home = () => {
   const services = [
@@ -28,10 +78,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { number: "500+", label: "Families Served" },
-    { number: "50+", label: "Certified Nurses" },
-    { number: "10+", label: "Years Experience" },
-    { number: "99%", label: "Satisfaction Rate" }
+    { target: 500, suffix: "+", label: "Families Served" },
+    { target: 50, suffix: "+", label: "Certified Nurses" },
+    { target: 10, suffix: "+", label: "Years Experience" },
+    { target: 99, suffix: "%", label: "Satisfaction Rate" }
   ];
 
   const testimonials = [
@@ -55,17 +105,118 @@ const Home = () => {
     }
   ];
 
+  // Hero background slider images with alt text (local assets from public/)
+  const heroImages = [
+    {
+      src: '/herobg (1).jpg',
+      alt: 'Nurse providing compassionate home care to an elderly patient'
+    },
+    {
+      src: '/herobg (2).jpg',
+      alt: 'Home nursing consultation with medical professional and patient'
+    },
+    {
+      src: '/herobg (3).jpg',
+      alt: 'Caregiver assisting senior with supportive and friendly attention'
+    },
+  ] as const;
+
+  const [activeHeroIndex, setActiveHeroIndex] = useState(0);
+  const statsRef = useRef<HTMLDivElement | null>(null);
+  const [statsInView, setStatsInView] = useState(false);
+
+  // Autoplay background change
+  useEffect(() => {
+    // Preload images for smoother transitions
+    heroImages.forEach((img) => {
+      const preload = new Image();
+      preload.src = encodeURI(img.src);
+    });
+
+    const intervalId = setInterval(() => {
+      setActiveHeroIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // 5s per slide
+    return () => clearInterval(intervalId);
+  }, [heroImages.length]);
+
+  // Start counters when stats section enters the viewport
+  useEffect(() => {
+    if (!statsRef.current) return;
+    const element = statsRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setStatsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-medical-blue via-medical-blue to-medical-pink py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
+      {/* Hero Section with background slider */}
+      <section className="relative py-20 lg:py-32 overflow-hidden min-h-[80vh]">
+        {/* Sliding background images */}
+        <div className="absolute inset-0">
+          {heroImages.map((imgData, index) => (
+            <img
+              key={imgData.src}
+              src={encodeURI(imgData.src)}
+              alt={imgData.alt}
+              loading={index === activeHeroIndex ? 'eager' : 'lazy'}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                index === activeHeroIndex ? 'opacity-100 kenburns' : 'opacity-0'
+              }`}
+              aria-hidden={index !== activeHeroIndex}
+              onError={(e) => {
+                const target = e.currentTarget as HTMLImageElement;
+                // First fallback to a high-quality placeholder (distinct per index)
+                const fallbacks = [
+                  '/homeNursingLogo2.jpg',
+                  '/placeholder.svg',
+                  '/favicon.ico',
+                ];
+                if (!(target as any)._fallbackStage) {
+                  (target as any)._fallbackStage = 1;
+                  target.src = encodeURI(fallbacks[index % fallbacks.length]);
+                } else if ((target as any)._fallbackStage === 1) {
+                  (target as any)._fallbackStage = 2;
+                  target.src = encodeURI('/placeholder.svg');
+                }
+              }}
+            />
+          ))}
+          {/* Gradient overlay for brand tint and contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-medical-blue/60 via-medical-blue/40 to-medical-pink/40" />
+          {/* Subtle dark overlay for text legibility */}
+          <div className="absolute inset-0 bg-black/15" />
+        </div>
+
+        {/* Dots indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveHeroIndex(index)}
+              className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                index === activeHeroIndex ? 'bg-white' : 'bg-white/50 hover:bg-white/80'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-shadow-lg">
                 Compassionate
-                <span className="block text-accent-pink">Home Nursing</span>
+                <span className="block text-accent-pink text-shadow-lg">Home Nursing</span>
                 Care
               </h1>
               <p className="text-xl text-white/90 leading-relaxed">
@@ -73,13 +224,13 @@ const Home = () => {
                 Our certified nurses provide personalized care to help you live well every day.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  asChild
-                  size="lg"
-                  className="bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground shadow-xl"
-                >
-                  <Link to="/contact">Schedule Consultation</Link>
-                </Button>
+                 <Button 
+                   asChild
+                   size="lg"
+                   className="bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground shadow-xl"
+                 >
+                   <a href="mailto:info@wellcarehomenursing.com?subject=Consultation%20Request">Schedule Consultation</a>
+                 </Button>
                 <Button 
                   asChild
                   size="lg"
@@ -108,13 +259,17 @@ const Home = () => {
 
       {/* Stats Section */}
       <section className="py-16 bg-medical-light-blue">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4" ref={statsRef}>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-medical-blue mb-2">
-                  {stat.number}
-                </div>
+                <AnimatedCounter
+                  target={stat.target}
+                  suffix={stat.suffix}
+                  start={statsInView}
+                  durationMs={4000}
+                  className="text-4xl lg:text-5xl font-bold text-medical-blue mb-2 inline-block"
+                />
                 <div className="text-medical-gray font-medium">
                   {stat.label}
                 </div>
@@ -139,15 +294,20 @@ const Home = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <service.icon className="h-8 w-8 text-accent-pink" />
+              <Card
+                key={index}
+                className="group relative overflow-hidden border-0 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:ring-1 hover:ring-accent-pink/40"
+              >
+                <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-pink/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <CardContent className="relative z-10 p-8 text-center">
+                  <div className="w-16 h-16 bg-accent-pink/10 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-accent-pink/20">
+                    <service.icon className="h-8 w-8 text-accent-pink transition-transform duration-300 group-hover:scale-110 accent-on-hover-pink" />
                   </div>
-                  <h3 className="text-xl font-bold text-medical-blue mb-4">
+                  <h3 className="text-xl font-bold text-medical-blue mb-2 transition-colors duration-300 group-hover:text-white">
                     {service.title}
                   </h3>
-                  <p className="text-medical-gray leading-relaxed">
+                  <span className="mb-4 block h-0.5 w-8 mx-auto bg-accent-pink transform origin-center transition-transform duration-300 group-hover:scale-x-125 accent-on-hover-pink" />
+                  <p className="text-medical-gray leading-relaxed transition-colors duration-300 group-hover:text-white/90">
                     {service.description}
                   </p>
                 </CardContent>
@@ -194,20 +354,26 @@ const Home = () => {
               </div>
             </div>
             <div className="lg:pl-8">
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
-                <h3 className="text-2xl font-bold text-medical-blue mb-6">
+              <div className="mb-8 bg-white rounded-2xl p-8 shadow-xl">
+              <img
+                  src={encodeURI('/herobg (2).jpg')}
+                  alt="WellCare nurse providing attentive home care"
+                  loading="lazy"
+                  className="w-full max-h-[380px] rounded-2xl object-cover shadow-2xl ring-1 ring-black/5"
+                />
+                <h3 className="text-2xl mt-4 font-bold text-medical-blue mb-6">
                   Request a Free Consultation
                 </h3>
                 <p className="text-medical-gray mb-6">
                   Let us assess your needs and create a personalized care plan for you or your loved one.
                 </p>
-                <Button 
-                  asChild
-                  size="lg"
-                  className="w-full bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground"
-                >
-                  <Link to="/contact">Schedule Now</Link>
-                </Button>
+                 <Button 
+                   asChild
+                   size="lg"
+                   className="w-full bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground"
+                 >
+                   <a href="mailto:info@wellcarehomenursing.com?subject=Schedule%20Consultation">Schedule Now</a>
+                 </Button>
               </div>
             </div>
           </div>
@@ -260,12 +426,12 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              asChild
-              size="lg"
-              variant="outline"
-                                className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
+               asChild
+               size="lg"
+               variant="outline"
+               className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
             >
-              <Link to="/contact">Get Started Today</Link>
+              <a href="mailto:info@wellcarehomenursing.com?subject=Get%20Started">Get Started Today</a>
             </Button>
             <Button 
               asChild
