@@ -79,13 +79,13 @@ const Header = () => {
       </div>
 
       {/* Main Header - Sticky on mobile, scrolls normally on desktop */}
-      <header className="bg-background/95 backdrop-blur-md border-b border-border p-2 transition-all duration-500 ease-in-out shadow-lg sticky md:static top-0 z-40">
+      <header className="bg-background/95 backdrop-blur-md border-b border-border p-1 transition-all duration-500 ease-in-out shadow-lg sticky md:static top-0 z-40">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center gap-4">
             {/* Logo */}
             <Link to="/" className="">
               <div className=" flex items-center">
-                <img src={homeNursingLogo2} alt="Wellcare Logo" className="h-16 w-auto" />
+                <img src={homeNursingLogo2} alt="Wellcare Logo" className="h-20 w-auto" />
               </div>
               
             </Link>
