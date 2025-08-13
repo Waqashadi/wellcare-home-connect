@@ -79,7 +79,7 @@ const Header = () => {
                </div>
               
               {/* Make Appointment Button */}
-              <a href="infowellcares@gmail.com" className="inline-flex">
+              <a href="appointment" className="inline-flex">
                 <Button 
                   className="bg-accent-pink hover:bg-pink-600 text-white font-bold p-6 rounded-lg text-lg"
                 >

@@ -44,7 +44,7 @@ export default function AppointmentButton({
   const getLabel = () => {
     switch (type) {
       case 'consultation':
-        return 'Schedule Consultation';
+        return 'Call Us Now';
       case 'appointment':
       default:
         return 'Book Appointment';
