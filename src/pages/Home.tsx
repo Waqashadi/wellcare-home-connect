@@ -180,7 +180,7 @@ const Home = () => {
                 const fallbacks = [
                   '/homeNursingLogo2.jpg',
                   '/placeholder.svg',
-                  '/favicon.ico',
+                  '/favicon.ico',  
                 ];
                 if (!(target as any)._fallbackStage) {
                   (target as any)._fallbackStage = 1;
