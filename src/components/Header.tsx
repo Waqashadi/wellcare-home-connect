@@ -2,7 +2,6 @@ import { useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import homeNursingLogo2 from '../../public/homeNursingLogo2.jpg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -100,7 +99,7 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="">
               <div className=" flex items-center">
-                <img src={homeNursingLogo2} alt="Wellcare Logo" className="h-20 w-auto" />
+                <img src="/homeNursingLogo2.jpg" alt="Wellcare Logo" className="h-20 w-auto" />
               </div>
               
             </Link>
