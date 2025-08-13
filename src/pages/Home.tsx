@@ -229,12 +229,13 @@ const Home = () => {
                   type="consultation"
                   size="lg"
                   variant="primary"
+                  className="rounded-lg"
                 />
                 <AppointmentButton 
                   type="appointment"
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-black"
+                  className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))]"
                 />
               </div>
             </div>
