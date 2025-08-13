@@ -49,7 +49,7 @@ export default function ServiceSectionBase({
           <div className="lg:pl-8">
             <div className="bg-white rounded-2xl p-6 shadow-xl">
               <img
-                src={imageSrc ? encodeURI(imageSrc) : encodeURI("/herobg (3).jpg")}
+                src={imageSrc || new URL('../../assets/herobg (3).jpg', import.meta.url).href}
                 alt={title}
                 loading="lazy"
                 className="w-full max-h-[360px] rounded-xl object-cover ring-1 ring-black/5"

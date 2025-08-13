@@ -17,7 +17,7 @@ const Appointment = () => {
       {/* Hero */}
       <section className="relative py-20 text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img src={encodeURI('/herobg (2).jpg')} alt="Appointment" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={new URL('../assets/herobg (2).jpg', import.meta.url).href} alt="Appointment" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-medical-blue/80 to-accent-pink/60" />
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">

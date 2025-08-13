@@ -13,7 +13,7 @@ const Blog = () => {
     date: "March 15, 2024",
     readTime: "8 min read",
     category: "Recovery Care",
-    image: "/herobg (1).jpg"
+    image: new URL('../assets/herobg (1).jpg', import.meta.url).href
   };
 
   const blogPosts = [
@@ -25,7 +25,7 @@ const Blog = () => {
       date: "March 12, 2024",
       readTime: "6 min read",
       category: "Insurance",
-      image: "/mission.jpg"
+      image: new URL('../assets/mission.jpg', import.meta.url).href
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ const Blog = () => {
       date: "March 8, 2024",
       readTime: "7 min read",
       category: "Chronic Care",
-      image: "/herobg (2).jpg"
+      image: new URL('../assets/herobg (2).jpg', import.meta.url).href
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ const Blog = () => {
       date: "March 5, 2024",
       readTime: "5 min read",
       category: "Home Care",
-      image: "/herobg (3).jpg"
+      image: new URL('../assets/herobg (3).jpg', import.meta.url).href
     },
     {
       id: 5,
@@ -55,7 +55,7 @@ const Blog = () => {
       date: "March 1, 2024",
       readTime: "9 min read",
       category: "Wound Care",
-      image: "/herobg (1).jpg"
+      image: new URL('../assets/herobg (1).jpg', import.meta.url).href
     },
     {
       id: 6,
@@ -65,7 +65,7 @@ const Blog = () => {
       date: "February 28, 2024",
       readTime: "6 min read",
       category: "Medication",
-      image: "/mission.jpg"
+      image: new URL('../assets/mission.jpg', import.meta.url).href
     },
     {
       id: 7,
@@ -75,7 +75,7 @@ const Blog = () => {
       date: "February 25, 2024",
       readTime: "8 min read",
       category: "Safety",
-      image: "/herobg (2).jpg"
+      image: new URL('../assets/herobg (2).jpg', import.meta.url).href
     }
   ];
 

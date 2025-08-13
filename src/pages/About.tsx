@@ -106,8 +106,8 @@ const About = () => {
             </div>
             <div className="lg:pl-8">
               <div className="bg-medical-light-blue rounded-2xl p-8">
-              <img
-                  src={encodeURI('/herobg (2).jpg')}
+               <img
+                   src={new URL('../assets/herobg (2).jpg', import.meta.url).href}
                   alt="WellCare nurse providing attentive home care"
                   loading="lazy"
                   className="w-full max-h-[380px] rounded-2xl object-cover shadow-2xl ring-1 ring-black/5"
@@ -271,13 +271,13 @@ const About = () => {
               type="consultation"
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-black"
+              className="rounded-lg border-white text-[hsl(var(--accent-pink))] hover:bg-white hover:text-[hsl(var(--accent-pink))]"
             />
             <AppointmentButton 
               type="appointment"
               size="lg"
               variant="secondary"
-              className="bg-white text-black hover:bg-white/90"
+              className="rounded-lg bg-white text-[hsl(var(--accent-pink))] hover:bg-white/90 hover:text-[black]"
             />
           </div>
         </div>

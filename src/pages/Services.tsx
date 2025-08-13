@@ -135,7 +135,7 @@ const Services = () => {
           'Insulin administration and education',
           'Aseptic technique and sharps safety',
         ]}
-        imageSrc="/herobg (1).jpg"
+        imageSrc={new URL('../assets/herobg (1).jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -148,7 +148,7 @@ const Services = () => {
           'Care coordination and referrals',
           'On-site diagnostics guidance',
         ]}
-        imageSrc="/herobg (2).jpg"
+        imageSrc={new URL('../assets/herobg (2).jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -161,7 +161,7 @@ const Services = () => {
           'Medication reminders',
           'Family updates and education',
         ]}
-        imageSrc="/herobg (3).jpg"
+        imageSrc={new URL('../assets/herobg (3).jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -174,7 +174,7 @@ const Services = () => {
           'Skilled nursing 24/7',
           'Emergency escalation protocols',
         ]}
-        imageSrc="/mission.jpg"
+        imageSrc={new URL('../assets/mission.jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -187,7 +187,7 @@ const Services = () => {
           'Fast results turnaround',
           'Doctor review and follow-up',
         ]}
-        imageSrc="/herobg (2).jpg"
+        imageSrc={new URL('../assets/herobg (2).jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -200,7 +200,7 @@ const Services = () => {
           'CPAP/BiPAP and oxygen concentrators',
           'Delivery, setup, and maintenance',
         ]}
-        imageSrc="/herobg (1).jpg"
+        imageSrc={new URL('../assets/herobg (1).jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -213,7 +213,7 @@ const Services = () => {
           'Medication administration',
           'Education and caregiver support',
         ]}
-        imageSrc="/herobg (3).jpg"
+        imageSrc={new URL('../assets/herobg (3).jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -226,7 +226,7 @@ const Services = () => {
           'Adherence packaging (e.g., blister packs)',
           'Scheduled refills and delivery',
         ]}
-        imageSrc="/mission.jpg"
+        imageSrc={new URL('../assets/mission.jpg', import.meta.url).href}
       />
 
       {/* Specialty Services Section */}
@@ -328,13 +328,13 @@ const Services = () => {
               type="consultation"
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-medical-blue"
+              className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))]"
             />
             <AppointmentButton 
               type="appointment"
               size="lg"
               variant="secondary"
-              className="bg-white text-medical-blue hover:bg-white/90"
+              className="rounded-lg bg-white text-[hsl(var(--accent-pink))] hover:bg-[hsl(var(--accent-pink))] hover:text-[white]"
             />
           </div>
         </div>

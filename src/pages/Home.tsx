@@ -109,15 +109,15 @@ const Home = () => {
   // Hero background slider images with alt text (local assets from public/)
   const heroImages = [
     {
-      src: '/herobg (1).jpg',
+      src: new URL('../assets/herobg (1).jpg', import.meta.url).href,
       alt: 'Nurse providing compassionate home care to an elderly patient'
     },
     {
-      src: '/herobg (2).jpg',
+      src: new URL('../assets/herobg (2).jpg', import.meta.url).href,
       alt: 'Home nursing consultation with medical professional and patient'
     },
     {
-      src: '/herobg (3).jpg',
+      src: new URL('../assets/herobg (3).jpg', import.meta.url).href,
       alt: 'Caregiver assisting senior with supportive and friendly attention'
     },
   ] as const;
@@ -178,9 +178,9 @@ const Home = () => {
                 const target = e.currentTarget as HTMLImageElement;
                 // First fallback to a high-quality placeholder (distinct per index)
                 const fallbacks = [
-                  '/homeNursingLogo2.jpg',
-                  '/placeholder.svg',
-                  '/favicon.ico',  
+                  new URL('../assets/about-bg.jpg', import.meta.url).href,
+                  new URL('../assets/services-bg.jpg', import.meta.url).href,
+                  new URL('../assets/blog-bg.jpg', import.meta.url).href,
                 ];
                 if (!(target as any)._fallbackStage) {
                   (target as any)._fallbackStage = 1;
@@ -354,7 +354,7 @@ const Home = () => {
             <div className="lg:pl-8">
               <div className="mb-8 bg-white rounded-2xl p-8 shadow-xl">
               <img
-                  src={encodeURI('/herobg (2).jpg')}
+                  src={new URL('../assets/herobg (2).jpg', import.meta.url).href}
                   alt="WellCare nurse providing attentive home care"
                   loading="lazy"
                   className="w-full max-h-[380px] rounded-2xl object-cover shadow-2xl ring-1 ring-black/5"

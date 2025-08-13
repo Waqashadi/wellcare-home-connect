@@ -79,7 +79,7 @@ const Header = () => {
                </div>
               
               {/* Make Appointment Button */}
-              <a href="appointment" className="inline-flex">
+              <a href="/appointment" className="inline-flex">
                 <Button 
                   className="bg-accent-pink hover:bg-pink-600 text-white font-bold p-6 rounded-lg text-lg"
                 >
@@ -99,7 +99,7 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="">
               <div className=" flex items-center">
-                <img src="/homeNursingLogo2.jpg" alt="Wellcare Logo" className="h-20 w-auto" />
+                <img src={new URL('../assets/homeNursingLogo2.jpg', import.meta.url).href} alt="Wellcare Logo" className="h-20 w-auto" />
               </div>
               
             </Link>

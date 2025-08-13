@@ -10,7 +10,7 @@ const Locations = () => {
       <section className="relative py-20 text-white overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={encodeURI('/herobg (1).jpg')}
+            src={new URL('../assets/herobg (1).jpg', import.meta.url).href}
             alt="WellCare service area"
             className="absolute inset-0 h-full w-full object-cover"
           />
@@ -100,13 +100,13 @@ const Locations = () => {
               type="consultation"
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-black"
+              className="rounded-lg border-white text-white hover:bg-white hover:text-black"
             />
             <AppointmentButton 
               type="appointment"
               size="lg"
               variant="secondary"
-              className="bg-white text-black hover:bg-white/90"
+              className="rounded-lg bg-white text-[hsl(var(--accent-pink))] hover:bg-white/90 hover:text-[black]"
             />
           </div>
         </div>

@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
       <section className="relative py-20 text-white overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={encodeURI('/herobg (1).jpg')}
+           src={new URL('../assets/herobg (1).jpg', import.meta.url).href}
             alt="Privacy Policy"
             className="absolute inset-0 h-full w-full object-cover"
           />
