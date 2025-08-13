@@ -100,13 +100,13 @@ const Locations = () => {
               type="consultation"
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-medical-blue"
+              className="border-white text-white hover:bg-white hover:text-black"
             />
             <AppointmentButton 
               type="appointment"
               size="lg"
               variant="secondary"
-              className="bg-white text-medical-blue hover:bg-white/90"
+              className="bg-white text-black hover:bg-white/90"
             />
           </div>
         </div>

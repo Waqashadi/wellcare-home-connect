@@ -234,7 +234,7 @@ const Home = () => {
                   type="appointment"
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-medical-blue"
+                  className="border-white text-white hover:bg-white hover:text-black"
                 />
               </div>
             </div>

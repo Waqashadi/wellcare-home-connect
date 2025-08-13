@@ -71,11 +71,31 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <li className="text-gray-300 text-sm">Skilled Nursing Care</li>
-              <li className="text-gray-300 text-sm">Post-Surgical Care</li>
-              <li className="text-gray-300 text-sm">Medication Management</li>
-              <li className="text-gray-300 text-sm">Wound Care</li>
-              <li className="text-gray-300 text-sm">Physical Therapy</li>
+              <li>
+                <Link to="/services/skilled-nursing-care" className="text-gray-300 hover:text-accent-pink transition-colors text-sm">
+                  Skilled Nursing Care
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/post-surgical-care" className="text-gray-300 hover:text-accent-pink transition-colors text-sm">
+                  Post-Surgical Care
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/medication-management" className="text-gray-300 hover:text-accent-pink transition-colors text-sm">
+                  Medication Management
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/wound-care" className="text-gray-300 hover:text-accent-pink transition-colors text-sm">
+                  Wound Care
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/physical-therapy" className="text-gray-300 hover:text-accent-pink transition-colors text-sm">
+                  Physical Therapy
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -115,7 +135,7 @@ const Footer = () => {
               © 2024 WellCare Home Nursing. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy" className="text-gray-400 hover:text-accent-pink text-sm transition-colors">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-accent-pink text-sm transition-colors">
                 Privacy Policy
               </Link>
               <Link to="/terms" className="text-gray-400 hover:text-accent-pink text-sm transition-colors">
