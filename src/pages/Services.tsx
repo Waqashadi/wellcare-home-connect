@@ -328,13 +328,13 @@ const Services = () => {
               type="consultation"
               size="lg"
               variant="outline"
-              className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))]"
+              className="rounded-lg"
             />
             <AppointmentButton 
               type="appointment"
               size="lg"
               variant="secondary"
-              className="rounded-lg bg-white text-[hsl(var(--accent-pink))] hover:bg-[hsl(var(--accent-pink))] hover:text-[white]"
+              className="rounded-lg"
             />
           </div>
         </div>

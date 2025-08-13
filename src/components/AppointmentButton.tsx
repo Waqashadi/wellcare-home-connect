@@ -25,7 +25,7 @@ export default function AppointmentButton({
   const normalized = sanitizePhone(phone || envPhone || "03106881824");
   const telUrl = `tel:${normalized}`;
 
-  const baseClasses = "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
+  const baseClasses = "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
   
   const sizeClasses = {
     sm: "px-4 py-2 text-sm",
@@ -34,10 +34,13 @@ export default function AppointmentButton({
   };
 
   const variantClasses = {
-    primary: "bg-accent-pink hover:bg-accent-pink/90 text-white shadow-lg hover:shadow-xl focus:ring-accent-pink/50",
-    secondary: "bg-medical-blue hover:bg-medical-blue/90 text-white shadow-lg hover:shadow-xl focus:ring-medical-blue/50",
-    outline: "border-2 border-accent-pink text-accent-pink hover:bg-accent-pink hover:text-white shadow-lg hover:shadow-xl focus:ring-accent-pink/50"
-  };
+    // Dark background → light text; hover slightly darker, keep contrast
+    primary: "bg-accent-pink text-white hover:bg-accent-pink/90 shadow-lg hover:shadow-xl focus:ring-accent-pink/50",
+    // Light background → accent pink text; hover fills accent pink with white text
+    secondary: "bg-white text-[hsl(var(--accent-pink))] hover:bg-[hsl(var(--accent-pink))] hover:text-white shadow-lg hover:shadow-xl focus:ring-accent-pink/50",
+    // Outline on dark sections: white text; hover fills white with accent pink text
+    outline: "border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))] shadow-lg hover:shadow-xl focus:ring-accent-pink/40"
+  } as const;
 
   const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className || ""}`;
 

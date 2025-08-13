@@ -277,7 +277,7 @@ const About = () => {
               type="appointment"
               size="lg"
               variant="secondary"
-              className="rounded-lg bg-white text-[hsl(var(--accent-pink))] hover:bg-white/90 hover:text-[black]"
+              className="rounded-lg bg-white text-[hsl(var(--accent-pink))] hover:bg-[hsl(var(--accent-pink))] hover:text-[white]"
             />
           </div>
         </div>
