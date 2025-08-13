@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import homeNursingLogo2 from '../../public/homeNursingLogo2.jpg';
+import homeNursingLogo2 from '../assets/homeNursingLogo2.jpg';
 
 const Footer = () => {
   return (

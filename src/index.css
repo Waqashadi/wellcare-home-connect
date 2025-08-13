@@ -119,7 +119,7 @@
 
 @layer base {
   html {
-    font-size: 18px; /* Increase base font size (was 16px) */
+    font-size: 1.25rem; /* Global font size (was 18px) */
   }
   * {
     @apply border-border;

@@ -65,12 +65,13 @@ export default function AppointmentButton({
     );
   };
 
+  const href = type === 'appointment' ? '/appointment' : telUrl;
+  const aria = type === 'appointment'
+    ? `${getLabel()} - Open appointment page`
+    : `${getLabel()} - Call ${normalized}`;
+
   return (
-    <a
-      href={telUrl}
-      aria-label={`${getLabel()} - Call ${normalized}`}
-      className={classes}
-    >
+    <a href={href} aria-label={aria} className={classes}>
       {getIcon()}
       {getLabel()}
     </a>
