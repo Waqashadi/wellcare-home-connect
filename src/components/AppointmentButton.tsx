@@ -1,4 +1,5 @@
 import { Calendar, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 type AppointmentButtonProps = {
   phone?: string;
@@ -68,13 +69,17 @@ export default function AppointmentButton({
     );
   };
 
-  const href = type === 'appointment' ? '/appointment' : telUrl;
-  const aria = type === 'appointment'
-    ? `${getLabel()} - Open appointment page`
-    : `${getLabel()} - Call ${normalized}`;
+  if (type === 'appointment') {
+    return (
+      <Link to="/appointment" aria-label={`${getLabel()} - Open appointment page`} className={classes}>
+        {getIcon()}
+        {getLabel()}
+      </Link>
+    );
+  }
 
   return (
-    <a href={href} aria-label={aria} className={classes}>
+    <a href={telUrl} aria-label={`${getLabel()} - Call ${normalized}`} className={classes}>
       {getIcon()}
       {getLabel()}
     </a>
