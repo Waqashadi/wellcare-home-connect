@@ -22,7 +22,8 @@ const Appointment = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
           <h1 className="text-4xl lg:text-6xl font-bold mb-6">Book an Appointment</h1>
-          <p className="text-xl text-white/90">No forms, no backend—reach us instantly using any method below.</p>
+          <p className="text-xl text-white/90">WellCare Home Nursing today for professional, compassionate care at your doorstep.
+Call us or book online for a hassle-free experience.</p>
         </div>
       </section>
 

@@ -117,9 +117,9 @@ const Services = () => {
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Our Healthcare Services
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed animate-fade-in" style={{ animationDelay: '200ms' }}>
-              Comprehensive home nursing services designed to meet your unique healthcare needs 
-              with professional expertise and compassionate care.
+            <p className="text-xl px-24 text-white/90 leading-relaxed animate-fade-in" style={{ animationDelay: '200ms' }}>
+             Get caring and professional home nursing services made just for your needs.
+Book your appointment today for comfort and care at home.
             </p>
           </div>
         </div>

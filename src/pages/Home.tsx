@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useEffect, useRef, useState } from 'react';
 import AppointmentButton from '@/components/AppointmentButton';
+import Services from './Services';
 
 // Smooth easing for counters
 function easeOutCubic(t: number): number {
@@ -274,6 +275,12 @@ const Home = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className=''>
+         <Services/>
         </div>
       </section>
 

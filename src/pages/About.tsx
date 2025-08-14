@@ -27,27 +27,6 @@ const About = () => {
     }
   ];
 
-  const teamMembers = [
-    {
-      name: "Dr. Sarah Martinez",
-      role: "Director of Nursing",
-      credentials: "RN, MSN, 15+ years experience",
-      description: "Leading our team with expertise in home health and patient advocacy."
-    },
-    {
-      name: "Jennifer Thompson",
-      role: "Care Coordinator",
-      credentials: "RN, BSN, 10+ years experience",
-      description: "Specializing in care plan development and family education."
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "Clinical Supervisor",
-      credentials: "RN, 12+ years experience",
-      description: "Ensuring quality standards and continuous improvement in patient care."
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -161,45 +140,6 @@ const About = () => {
                   </h3>
                   <p className="text-medical-gray leading-relaxed">
                     {value.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Team Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
-              Our Leadership Team
-            </h2>
-            <p className="text-xl text-medical-gray max-w-3xl mx-auto">
-              Meet the experienced healthcare professionals who lead our organization 
-              and ensure the highest quality of care for every patient.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="border-0 shadow-lg">
-                <CardContent className="p-8 text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-medical-blue to-accent-pink rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Users className="h-12 w-12 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-medical-blue mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-accent-pink font-semibold mb-2">
-                    {member.role}
-                  </p>
-                  <p className="text-medical-gray text-sm mb-4">
-                    {member.credentials}
-                  </p>
-                  <p className="text-medical-gray leading-relaxed">
-                    {member.description}
                   </p>
                 </CardContent>
               </Card>

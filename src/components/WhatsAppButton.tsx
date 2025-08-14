@@ -14,7 +14,7 @@ export default function WhatsAppButton({
   className,
 }: WhatsAppButtonProps) {
   const envPhone = (import.meta as any)?.env?.VITE_WHATSAPP_NUMBER as string | undefined;
-  const normalized = sanitizePhone(phone || envPhone || "03106881824");
+  const normalized = sanitizePhone(phone || envPhone || "+923106881824");
   const url = `https://wa.me/${normalized}?text=${encodeURIComponent(message)}`;
 
   return (
