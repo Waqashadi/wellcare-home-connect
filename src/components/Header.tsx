@@ -79,14 +79,14 @@ const Header = () => {
                </div>
               
               {/* Make Appointment Button */}
-              <a href="/appointment" className="inline-flex">
+              <Link to="/appointment" className="inline-flex">
                 <Button 
                   className="bg-accent-pink hover:bg-pink-600 text-white font-bold p-6 rounded-lg text-lg"
                 >
                   <span className="hidden sm:inline">Book Appointment</span>
                   <span className="sm:hidden">Book Appointment</span>
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

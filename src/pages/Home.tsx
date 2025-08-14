@@ -365,13 +365,13 @@ const Home = () => {
                 <p className="text-medical-gray mb-6">
                   Let us assess your needs and create a personalized care plan for you or your loved one.
                 </p>
-                 <Button 
-                   asChild
-                   size="lg"
-                   className="w-full bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground"
-                 >
+                <Button 
+                  asChild
+                  size="lg"
+                  className="w-full bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground"
+                >
                    <a href="mailto:infowellcares@gmail.com?subject=Schedule%20Consultation">Schedule Now</a>
-                 </Button>
+                </Button>
               </div>
             </div>
           </div>
@@ -424,10 +424,10 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-               asChild
-               size="lg"
-               variant="outline"
-               className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
+              asChild
+              size="lg"
+              variant="outline"
+                                className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
             >
                              <a href="mailto:infowellcares@gmail.com?subject=Get%20Started">Get Started Today</a>
             </Button>
