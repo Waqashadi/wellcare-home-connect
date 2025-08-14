@@ -287,14 +287,11 @@ const Home = () => {
       {/* Services Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center w-full mb-16">
             <h2 className="text-4xl font-bold text-medical-blue mb-6">
               Our Healthcare Services
             </h2>
-            <p className="text-xl text-medical-gray max-w-3xl mx-auto">
-              We provide comprehensive home nursing services tailored to your unique needs, 
-              ensuring quality care in the comfort of your own home.
-            </p>
+          
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

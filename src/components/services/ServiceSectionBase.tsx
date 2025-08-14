@@ -18,7 +18,7 @@ export default function ServiceSectionBase({
   description,
   features = [],
   imageSrc,
-  ctaHref = "/contact",
+  ctaHref = "/appointment",
   ctaLabel = "Book This Service",
 }: ServiceSectionBaseProps) {
   return (
@@ -42,9 +42,11 @@ export default function ServiceSectionBase({
                 ))}
               </div>
             )}
-            <Button asChild size="lg" className="bg-accent-pink hover:bg-accent-pink/90">
-              <Link to={ctaHref}>{ctaLabel}</Link>
-            </Button>
+            <div className="flex justify-center lg:justify-start">
+              <Button asChild size="lg" className="bg-accent-pink hover:bg-accent-pink/90 rounded-lg">
+                <Link to={ctaHref}>{ctaLabel}</Link>
+              </Button>
+            </div>
           </div>
           <div className="lg:pl-8">
             <div className="bg-white rounded-2xl p-6 shadow-xl">
