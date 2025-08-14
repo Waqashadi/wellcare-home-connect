@@ -23,7 +23,7 @@ export default function AppointmentButton({
   showIcon = true,
 }: AppointmentButtonProps) {
   const envPhone = (import.meta as any)?.env?.VITE_PHONE_NUMBER as string | undefined;
-  const normalized = sanitizePhone(phone || envPhone || "03106881824");
+  const normalized = sanitizePhone(phone || envPhone || "+923106881824");
   const telUrl = `tel:${normalized}`;
 
   const baseClasses = "inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";

@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const APPOINTMENT_EMAIL = 'infowellcares@gmail.com';
-const APPOINTMENT_PHONE_DISPLAY = '0310-688-1824';
+const APPOINTMENT_PHONE_DISPLAY = '+923106881824';
 const APPOINTMENT_PHONE_TEL = '+923106881824';
 const WHATSAPP_NUMBER_SANITIZED = '923106881824';
 

@@ -56,7 +56,7 @@ const App = () => (
           </main>
           <Footer />
           {/* Global compact professional contact icons */}
-          <CallButton phone="+92310-688-1824" variant="floating" />
+          <CallButton phone="+923106881824" variant="floating" />
           <WhatsAppButton />
         </div>
       </BrowserRouter>

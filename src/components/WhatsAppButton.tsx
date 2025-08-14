@@ -1,5 +1,5 @@
 type WhatsAppButtonProps = {
-  phone?: string; // E.164 without '+' preferred (e.g., 03106881824)
+  phone?: string; // E.164 without '+' preferred (e.g., +923106881824)
   message?: string;
   className?: string;
 };

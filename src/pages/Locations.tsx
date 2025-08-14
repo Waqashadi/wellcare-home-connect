@@ -56,7 +56,7 @@ const Locations = () => {
                    </div>
                    <div className="flex items-center justify-center text-medical-gray mb-6">
                      <Phone className="h-6 w-6 text-accent-pink mr-2" />
-                     <span className="text-xl font-semibold">0310-688-1824</span>
+                     <span className="text-xl font-semibold">+923106881824</span>
                    </div>
                  </div>
                                    <div className="h-[400px] w-full">

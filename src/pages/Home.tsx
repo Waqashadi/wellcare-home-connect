@@ -248,7 +248,7 @@ const Home = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-medical-blue">24/7 Emergency Care</h3>
                   <p className="text-medical-gray">Call us anytime for immediate assistance</p>
-                  <p className="text-3xl font-bold text-medical-blue">0310-688-1824</p>
+                  <p className="text-3xl font-bold text-medical-blue">+923106881824</p>
                 </div>
               </div>
             </div>
