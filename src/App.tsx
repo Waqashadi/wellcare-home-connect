@@ -21,6 +21,7 @@ import MedicationManagement from "./pages/services/MedicationManagement";
 import WoundCare from "./pages/services/WoundCare";
 import PhysicalTherapy from "./pages/services/PhysicalTherapy";
 import WhatsAppButton from "./components/WhatsAppButton";
+import CallButton from "./components/CallButton";
 import ScrollManager from "./components/ScrollManager";
 
 const queryClient = new QueryClient();
@@ -54,7 +55,8 @@ const App = () => (
             </Routes>
           </main>
           <Footer />
-          {/* Global compact professional contact icon */}
+          {/* Global compact professional contact icons */}
+          <CallButton phone="+92310-688-1824" variant="floating" />
           <WhatsAppButton />
         </div>
       </BrowserRouter>

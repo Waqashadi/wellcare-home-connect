@@ -23,7 +23,7 @@ export default function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className={`fixed z-[9999] inline-flex items-center justify-center h-12 w-12 rounded-full bg-white hover:scale-110 transition-all shadow-lg shadow-[#25D366]/30 ring-1 ring-black/5 ${className || ""}`}
+      className={`fixed z-[9999] inline-flex items-center justify-center h-12 w-12 bg-green-600 rounded-full bg-accent-pink hover:scale-110 transition-all shadow-lg shadow-[#25D366]/30 ring-1 ring-black/5 ${className || ""}`}
       style={{
         bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))",
         right: "calc(1rem + env(safe-area-inset-right, 0px))",
@@ -32,7 +32,7 @@ export default function WhatsAppButton({
       <img
         src={new URL('../assets/whatsapp.png', import.meta.url).href}
         alt="WhatsApp"
-        className="h-6 w-6"
+        className="h-12 w-auto rounded-full"
       />
     </a>
   );

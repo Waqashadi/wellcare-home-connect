@@ -1,3 +1,5 @@
+import { Phone } from 'lucide-react';
+
 type CallButtonProps = {
   phone?: string; // E.164 without '+' preferred (e.g., 03106881824)
   label?: string;
@@ -14,7 +16,7 @@ export default function CallButton({
   phone,
   label = "Call Us Now",
   className,
-  variant = 'primary',
+  variant = 'secondary',
   size = 'md',
 }: CallButtonProps) {
   const envPhone = (import.meta as any)?.env?.VITE_PHONE_NUMBER as string | undefined;
@@ -30,9 +32,9 @@ export default function CallButton({
   };
 
   const variantClasses = {
-    primary: "bg-accent-pink hover:bg-accent-pink/90 text-white shadow-lg hover:shadow-xl focus:ring-accent-pink/50",
-    secondary: "bg-medical-blue hover:bg-medical-blue/90 text-white shadow-lg hover:shadow-xl focus:ring-medical-blue/50",
-    floating: "fixed z-[9999] h-12 w-12 rounded-full bg-accent-pink hover:bg-accent-pink/90 text-white shadow-lg hover:shadow-xl focus:ring-accent-pink/50"
+    primary: "bg-accent-pink  hover:bg-accent-pink/90 text-black shadow-lg hover:shadow-xl focus:ring-accent-pink/50",
+    secondary: "bg-medical-blue hover:bg-medical-blue/90 text-black shadow-lg hover:shadow-xl focus:ring-accent-pink/50",
+    floating: "fixed z-[9999] inline-flex items-center justify-center h-12 w-12 rounded-full bg-[hsl(var(--accent-pink))] hover:scale-110 transition-all shadow-lg shadow-[hsl(var(--accent-pink))]/30 ring-1 ring-black/5 text-white"
   };
 
   const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className || ""}`;
@@ -42,18 +44,13 @@ export default function CallButton({
       <a
         href={telUrl}
         aria-label={`Call ${normalized}`}
-        className={classes }
+        className={variantClasses.floating}
         style={{
-          bottom: "calc(6rem + env(safe-area-inset-bottom, 0px))",
+          bottom: "calc(4.5rem + env(safe-area-inset-bottom, 0px))",
           right: "calc(1rem + env(safe-area-inset-right, 0px))",
         }}
       >
-        <img
-          src={new URL('../assets/phone.png', import.meta.url).href}
-          alt="Call"
-          loading="eager"
-          className="block pointer-events-none h-6 w-6 object-contain"
-        />
+        <Phone className="h-8 w-8 text-white" />
       </a>
     );
   }
@@ -64,20 +61,7 @@ export default function CallButton({
       aria-label={`Call ${normalized}`}
       className={classes}
     >
-             <svg
-         className="mr-2 h-5 w-5"
-         fill="none"
-         stroke="currentColor"
-         viewBox="0 0 24 24"
-         aria-hidden="true"
-       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-        />
-      </svg>
+      <Phone className="mr-2 h-5 w-5" />
       {label}
     </a>
   );
