@@ -47,7 +47,7 @@ const Header = () => {
                 </div>
                 <div>
                   <div className="font-bold text-blue-900 text-lg">Our Locations</div>
-                  <div className="text-gray-600 text-md">Rawalpindi, Islamabad</div>
+                  <div className="text-gray-600 text-md">Islamabad, Rawalpindi </div>
                 </div>
               </div>
               

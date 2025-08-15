@@ -51,7 +51,7 @@ Call us or book online for a hassle-free experience.</p>
                 </div>
                 <h3 className="text-xl font-bold text-medical-blue mb-2">Call</h3>
                 <p className="text-medical-gray mb-6">For fastest response during business hours.</p>
-                <Button asChild className="bg-medical-blue hover:bg-medical-blue/90">
+                <Button asChild className="bg-medical-blue hover:bg-accent-pink/90">
                   <a href={telHref}>Call {APPOINTMENT_PHONE_DISPLAY}</a>
                 </Button>
               </CardContent>

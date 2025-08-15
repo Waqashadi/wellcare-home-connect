@@ -35,7 +35,7 @@ const Blog = () => {
       date: "March 8, 2024",
       readTime: "7 min read",
       category: "Chronic Care",
-      image: new URL('../assets/herobg (2).jpg', import.meta.url).href
+      image: new URL('../assets/HCSimg.jpg', import.meta.url).href
     },
     {
       id: 4,
@@ -55,7 +55,7 @@ const Blog = () => {
       date: "March 1, 2024",
       readTime: "9 min read",
       category: "Wound Care",
-      image: new URL('../assets/herobg (1).jpg', import.meta.url).href
+      image: new URL('../assets/services-bg.jpg', import.meta.url).href
     },
     {
       id: 6,
@@ -65,7 +65,7 @@ const Blog = () => {
       date: "February 28, 2024",
       readTime: "6 min read",
       category: "Medication",
-      image: new URL('../assets/mission.jpg', import.meta.url).href
+      image: new URL('../assets/HMimg.jpg', import.meta.url).href
     },
     {
       id: 7,
@@ -75,20 +75,10 @@ const Blog = () => {
       date: "February 25, 2024",
       readTime: "8 min read",
       category: "Safety",
-      image: new URL('../assets/herobg (2).jpg', import.meta.url).href
+      image: new URL('../assets/HCSimg.jpg', import.meta.url).href
     }
   ];
 
-  const categories = [
-    "All Posts",
-    "Recovery Care",
-    "Chronic Care",
-    "Insurance",
-    "Home Care",
-    "Wound Care",
-    "Medication",
-    "Safety"
-  ];
 
   return (
     <div className="min-h-screen">
@@ -168,26 +158,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="py-12 bg-medical-light-blue">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category, index) => (
-              <Button
-                key={index}
-                variant={index === 0 ? "default" : "outline"}
-                className={index === 0 
-                  ? "bg-medical-blue hover:bg-medical-blue/90" 
-                  : "border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white"
-                }
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Blog Posts Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -259,24 +229,13 @@ const Blog = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
-              Stay Updated with Our Newsletter
+               Caring Starts With a Conversation
             </h2>
             <p className="text-xl mb-8 text-white/90">
               Get the latest health tips, care updates, and expert insights delivered 
               directly to your inbox every month.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-medical-blue"
-              />
-              <Button 
-                className="bg-white py-6 text-medical-blue hover:bg-white/90"
-              >
-                Subscribe
-              </Button>
-            </div>
+            
             <p className="text-white/70 text-sm mt-4">
               No spam, unsubscribe anytime. Your privacy is important to us.
             </p>

@@ -1,10 +1,21 @@
-import { Link } from 'react-router-dom';
-import { Heart, Shield, Clock, Users, Star, CheckCircle, Phone, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { useEffect, useRef, useState } from 'react';
-import AppointmentButton from '@/components/AppointmentButton';
-import Services from './Services';
+import { Link } from "react-router-dom";
+import {
+  Heart,
+  Shield,
+  Clock,
+  Users,
+  Star,
+  CheckCircle,
+  Phone,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { useEffect, useRef, useState } from "react";
+import AppointmentButton from "@/components/AppointmentButton";
+import Services from "./Services";
+import Labimg from "@/assets/Labimg.jpg";
+import IDCimgbg from "@/assets/IDCimgbg.jpg";
 
 // Smooth easing for counters
 function easeOutCubic(t: number): number {
@@ -21,7 +32,7 @@ type AnimatedCounterProps = {
 
 function AnimatedCounter({
   target,
-  suffix = '',
+  suffix = "",
   durationMs = 1500,
   start = false,
   className,
@@ -52,7 +63,12 @@ function AnimatedCounter({
     };
   }, [start, target, durationMs]);
 
-  return <span className={className}>{value.toLocaleString()}{suffix}</span>;
+  return (
+    <span className={className}>
+      {value.toLocaleString()}
+      {suffix}
+    </span>
+  );
 }
 
 const Home = () => {
@@ -60,66 +76,73 @@ const Home = () => {
     {
       icon: Heart,
       title: "Skilled Nursing Care",
-      description: "Professional nursing care delivered with compassion in your home environment."
+      description:
+        "Professional nursing care delivered with compassion in your home environment.",
     },
     {
       icon: Shield,
       title: "Post-Surgical Care",
-      description: "Specialized recovery care to ensure optimal healing after medical procedures."
+      description:
+        "Specialized recovery care to ensure optimal healing after medical procedures.",
     },
     {
       icon: Clock,
       title: "24/7 Support",
-      description: "Round-the-clock emergency support and monitoring for peace of mind."
+      description:
+        "Round-the-clock emergency support and monitoring for peace of mind.",
     },
     {
       icon: Users,
       title: "Family-Centered Care",
-      description: "Involving family members in care plans for comprehensive support."
-    }
+      description:
+        "Involving family members in care plans for comprehensive support.",
+    },
   ];
 
   const stats = [
     { target: 500, suffix: "+", label: "Families Served" },
     { target: 50, suffix: "+", label: "Certified Nurses" },
     { target: 10, suffix: "+", label: "Years Experience" },
-    { target: 99, suffix: "%", label: "Satisfaction Rate" }
+    { target: 99, suffix: "%", label: "Satisfaction Rate" },
   ];
 
   const testimonials = [
     {
       name: "Sarah Johnson",
       role: "Daughter of Patient",
-      content: "WellCare's nurses provided exceptional care for my mother. Their professionalism and compassion made all the difference during her recovery.",
-      rating: 5
+      content:
+        "WellCare's nurses provided exceptional care for my mother. Their professionalism and compassion made all the difference during her recovery.",
+      rating: 5,
     },
     {
       name: "Michael Chen",
       role: "Family Caregiver",
-      content: "The peace of mind knowing that qualified nurses are available 24/7 is invaluable. Highly recommend their services.",
-      rating: 5
+      content:
+        "The peace of mind knowing that qualified nurses are available 24/7 is invaluable. Highly recommend their services.",
+      rating: 5,
     },
     {
       name: "Lisa Rodriguez",
       role: "Patient's Wife",
-      content: "Professional, caring, and reliable. WellCare Home Nursing exceeded our expectations in every way.",
-      rating: 5
-    }
+      content:
+        "Professional, caring, and reliable. WellCare Home Nursing exceeded our expectations in every way.",
+      rating: 5,
+    },
   ];
 
   // Hero background slider images with alt text (local assets from public/)
   const heroImages = [
     {
-      src: new URL('../assets/herobg (1).jpg', import.meta.url).href,
-      alt: 'Nurse providing compassionate home care to an elderly patient'
+      src: new URL("../assets/herobg (1).jpg", import.meta.url).href,
+      alt: "Nurse providing compassionate home care to an elderly patient",
     },
     {
-      src: new URL('../assets/herobg (2).jpg', import.meta.url).href,
-      alt: 'Home nursing consultation with medical professional and patient'
+      src: new URL("../assets/herobg (2).jpg", import.meta.url).href,
+      alt: "Home nursing consultation with medical professional and patient",
     },
     {
-      src: new URL('../assets/herobg (3).jpg', import.meta.url).href,
-      alt: 'Caregiver assisting senior with supportive and friendly attention'
+      src: new URL("../assets/herobg (3).jpg", import.meta.url).href,
+      alt: "Caregiver assisting senior with supportive and friendly attention",
     },
   ] as const;
 
@@ -170,25 +193,25 @@ const Home = () => {
               key={imgData.src}
               src={encodeURI(imgData.src)}
               alt={imgData.alt}
-              loading={index === activeHeroIndex ? 'eager' : 'lazy'}
+              loading={index === activeHeroIndex ? "eager" : "lazy"}
               className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-                index === activeHeroIndex ? 'opacity-100 kenburns' : 'opacity-0'
+                index === activeHeroIndex ? "opacity-100 kenburns" : "opacity-0"
               }`}
               aria-hidden={index !== activeHeroIndex}
               onError={(e) => {
                 const target = e.currentTarget as HTMLImageElement;
                 // First fallback to a high-quality placeholder (distinct per index)
                 const fallbacks = [
-                  new URL('../assets/about-bg.jpg', import.meta.url).href,
-                  new URL('../assets/services-bg.jpg', import.meta.url).href,
-                  new URL('../assets/blog-bg.jpg', import.meta.url).href,
+                  new URL("../assets/about-bg.jpg", import.meta.url).href,
+                  new URL("../assets/services-bg.jpg", import.meta.url).href,
+                  new URL("../assets/blog-bg.jpg", import.meta.url).href,
                 ];
                 if (!(target as any)._fallbackStage) {
                   (target as any)._fallbackStage = 1;
                   target.src = encodeURI(fallbacks[index % fallbacks.length]);
                 } else if ((target as any)._fallbackStage === 1) {
                   (target as any)._fallbackStage = 2;
-                  target.src = encodeURI('/placeholder.svg');
+                  target.src = encodeURI("/placeholder.svg");
                 }
               }}
             />
@@ -206,7 +229,9 @@ const Home = () => {
               key={index}
               onClick={() => setActiveHeroIndex(index)}
               className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                index === activeHeroIndex ? 'bg-white' : 'bg-white/50 hover:bg-white/80'
+                index === activeHeroIndex
+                  ? "bg-white"
+                  : "bg-white/50 hover:bg-white/80"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -218,21 +243,24 @@ const Home = () => {
             <div className="text-white space-y-6">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-shadow-lg">
                 Compassionate
-                <span className="block text-accent-pink text-shadow-lg">Home Nursing</span>
+                <span className="block text-accent-pink text-shadow-lg">
+                  Home Nursing
+                </span>
                 Care
               </h1>
               <p className="text-xl text-white/90 leading-relaxed">
-                Professional healthcare services delivered in the comfort of your home. 
-                Our certified nurses provide personalized care to help you live well every day.
+                Professional healthcare services delivered in the comfort of
+                your home. Our certified nurses provide personalized care to
+                help you live well every day.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <AppointmentButton 
+                <AppointmentButton
                   type="consultation"
                   size="lg"
                   variant="primary"
                   className="rounded-lg"
                 />
-                <AppointmentButton 
+                <AppointmentButton
                   type="appointment"
                   size="lg"
                   variant="outline"
@@ -246,9 +274,15 @@ const Home = () => {
                   <div className="w-16 h-16 bg-accent-pink rounded-full flex items-center justify-center mx-auto">
                     <Phone className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-medical-blue">24/7 Emergency Care</h3>
-                  <p className="text-medical-gray">Call us anytime for immediate assistance</p>
-                  <p className="text-3xl font-bold text-medical-blue">+923106881824</p>
+                  <h3 className="text-2xl font-bold text-medical-blue">
+                    24/7 Emergency Care
+                  </h3>
+                  <p className="text-medical-gray">
+                    Call us anytime for immediate assistance
+                  </p>
+                  <p className="text-3xl font-bold text-medical-blue">
+                    +923106881824
+                  </p>
                 </div>
               </div>
             </div>
@@ -279,8 +313,8 @@ const Home = () => {
       </section>
 
       <section>
-        <div className=''>
-         <Services/>
+        <div className="">
+          <Services />
         </div>
       </section>
 
@@ -291,9 +325,8 @@ const Home = () => {
             <h2 className="text-4xl font-bold text-medical-blue mb-6">
               Our Healthcare Services
             </h2>
-          
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <Card
@@ -334,7 +367,7 @@ const Home = () => {
                   "24/7 emergency support and monitoring",
                   "Comprehensive insurance coverage accepted",
                   "Family involvement in care decisions",
-                  "Regular progress reports and updates"
+                  "Regular progress reports and updates",
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <CheckCircle className="h-6 w-6 text-accent-pink flex-shrink-0 mt-1" />
@@ -343,7 +376,7 @@ const Home = () => {
                 ))}
               </div>
               <div className="mt-8">
-                <Button 
+                <Button
                   asChild
                   size="lg"
                   className="bg-medical-blue hover:bg-medical-blue/90"
@@ -357,8 +390,10 @@ const Home = () => {
             </div>
             <div className="lg:pl-8">
               <div className="mb-8 bg-white rounded-2xl p-8 shadow-xl">
-              <img
-                  src={new URL('../assets/herobg (2).jpg', import.meta.url).href}
+                <img
+                  src={
+                    new URL("../assets/herobg (2).jpg", import.meta.url).href
+                  }
                   alt="WellCare nurse providing attentive home care"
                   loading="lazy"
                   className="w-full max-h-[380px] rounded-2xl object-cover shadow-2xl ring-1 ring-black/5"
@@ -367,14 +402,17 @@ const Home = () => {
                   Request a Free Consultation
                 </h3>
                 <p className="text-medical-gray mb-6">
-                  Let us assess your needs and create a personalized care plan for you or your loved one.
+                  Let us assess your needs and create a personalized care plan
+                  for you or your loved one.
                 </p>
-                <Button 
+                <Button
                   asChild
                   size="lg"
                   className="w-full bg-accent-pink hover:bg-accent-pink/90 text-accent-pink-foreground"
                 >
-                   <a href="mailto:infowellcares@gmail.com?subject=Schedule%20Consultation">Schedule Now</a>
+                  <a href="mailto:infowellcares@gmail.com?subject=Schedule%20Consultation">
+                    Schedule Now
+                  </a>
                 </Button>
               </div>
             </div>
@@ -390,25 +428,33 @@ const Home = () => {
               What Our Families Say
             </h2>
             <p className="text-xl text-medical-gray max-w-3xl mx-auto">
-              Read testimonials from families who have experienced our compassionate care firsthand.
+              Read testimonials from families who have experienced our
+              compassionate care firsthand.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="border-0 shadow-lg">
                 <CardContent className="p-8">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-yellow-400 fill-current"
+                      />
                     ))}
                   </div>
                   <p className="text-medical-gray mb-6 italic leading-relaxed">
                     "{testimonial.content}"
                   </p>
                   <div>
-                    <p className="font-bold text-medical-blue">{testimonial.name}</p>
-                    <p className="text-medical-gray text-sm">{testimonial.role}</p>
+                    <p className="font-bold text-medical-blue">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-medical-gray text-sm">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -417,6 +463,41 @@ const Home = () => {
         </div>
       </section>
 
+     <section className="py-12 bg-white text-center">
+  <div className="container mx-auto px-4">
+    {/* Heading */}
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-medical-blue mb-4">
+      Our Lab Services
+    </h2>
+    <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-600">
+      Providing accurate, fast, and reliable laboratory testing with
+      state-of-the-art equipment.
+    </p>
+
+    {/* Image with overlay */}
+    <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto transform hover:scale-105 transition duration-500">
+      <img
+        src={Labimg}
+        alt="Lab Services"
+        className="w-full h-auto object-cover"
+      />
+      <span className="absolute bottom-4  left-1/2 -translate-x-1/2 text-black py-2 ">
+        Islamabad I.D.C
+      </span>
+    </div>
+
+    {/* Background Image Below */}
+    <div className="mt-8">
+      <img
+        src={IDCimgbg}
+        alt="IDC Background"
+        className="w-full h-auto object-cover rounded-lg shadow-md"
+      />
+    </div>
+  </div>
+</section>
+
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white">
         <div className="container mx-auto px-4 text-center">
@@ -424,18 +505,19 @@ const Home = () => {
             Ready to Experience Quality Home Care?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-            Contact us today to discuss your healthcare needs and learn how we can help you or your loved one live well every day.
+            Contact us today to discuss your healthcare needs and learn how we
+            can help you or your loved one live well every day.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               asChild
               size="lg"
               variant="outline"
-                                className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
+              className="border-white text-accent-pink hover:bg-white hover:text-medical-blue"
             >
-                             <a href="mailto:infowellcares@gmail.com?subject=Get%20Started">Get Started Today</a>
+              <a href="/appointment">Get Started Today</a>
             </Button>
-            <Button 
+            <Button
               asChild
               size="lg"
               className="bg-white text-medical-blue hover:bg-white/90"

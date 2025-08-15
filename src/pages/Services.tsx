@@ -131,7 +131,7 @@ const Services = () => {
           'Insulin administration and education',
           'Aseptic technique and sharps safety',
         ]}
-        imageSrc={new URL('../assets/herobg (1).jpg', import.meta.url).href}
+        imageSrc={new URL('../assets/HISimg.jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -157,7 +157,7 @@ const Services = () => {
           'Medication reminders',
           'Family updates and education',
         ]}
-        imageSrc={new URL('../assets/herobg (3).jpg', import.meta.url).href}
+        imageSrc={new URL('../assets/HCSimg.jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -170,7 +170,7 @@ const Services = () => {
           'Skilled nursing 24/7',
           'Emergency escalation protocols',
         ]}
-        imageSrc={new URL('../assets/mission.jpg', import.meta.url).href}
+        imageSrc={new URL('../assets/HICOimg.jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -183,7 +183,7 @@ const Services = () => {
           'Fast results turnaround',
           'Doctor review and follow-up',
         ]}
-        imageSrc={new URL('../assets/herobg (2).jpg', import.meta.url).href}
+        imageSrc={new URL('../assets/LabTestimg.jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
@@ -196,7 +196,7 @@ const Services = () => {
           'CPAP/BiPAP and oxygen concentrators',
           'Delivery, setup, and maintenance',
         ]}
-        imageSrc={new URL('../assets/herobg (1).jpg', import.meta.url).href}
+        imageSrc={new URL('../assets/HMimg.jpg', import.meta.url).href}
       />
 
       <ServiceSectionBase
