@@ -116,7 +116,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 mt-1 text-accent-pink" />
-                <p className="text-gray-300 text-sm">Healthcare <br />Rawalpindi, Islamabad</p>
+                <p className="text-gray-300 text-sm">Healthcare <br />Islamabad, Rawalpindi</p>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock className="h-4 w-4 mt-1 text-accent-pink" />

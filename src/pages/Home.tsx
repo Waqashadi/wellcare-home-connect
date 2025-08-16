@@ -237,8 +237,7 @@ const Home = () => {
             />
           ))}
         </div>
-
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 pr-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white space-y-6">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-shadow-lg">
@@ -248,40 +247,40 @@ const Home = () => {
                 </span>
                 Care
               </h1>
-              <p className="text-xl text-white/90 leading-relaxed">
+              <p className="text-xl text-white/90 leading-relaxed pr-4">
                 Professional healthcare services delivered in the comfort of
                 your home. Our certified nurses provide personalized care to
                 help you live well every day.
               </p>
-              <div className="flex flex-col justify-between items-center sm:flex-row gap-4 w-full sm:w-auto">
+              <div className="flex flex-col justify-between items-center sm:flex-row gap-4 w-full sm:w-full">
                 <AppointmentButton
                   type="consultation"
                   size="lg"
                   variant="primary"
-                  className="rounded-lg w-full sm:w-auto"
+                  className="rounded-lg  whitespace-nowrap w-[90%] sm:w-full mr-6 sm:m-0 "
                 />
                 <AppointmentButton
                   type="appointment"
                   size="lg"
                   variant="outline"
-                  className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))] w-full sm:w-auto"
+                  className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))] w-[90%] sm:w-full mr-6 sm:m-0 whitespace-nowrap "
                 />
               </div>
             </div>
-            <div className="lg:text-right">
-              <div className="inline-block bg-white rounded-2xl p-8 shadow-2xl">
-                <div className="text-center space-y-4">
+            <div className="lg:text-right ">
+              <div className="inline-block bg-white rounded-2xl p-8 w-full sm:w-auto shadow-2xl ">
+                <div className="text-center space-y-4 ">
                   <div className="w-16 h-16 bg-accent-pink rounded-full flex items-center justify-center mx-auto">
                     <Phone className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-medical-blue">
+                  <h3 className="text-2xl font-bold text-medical-blue whitespace-nowrap">
                     24/7 Emergency Care
                   </h3>
                   <p className="text-medical-gray">
                     Call us anytime for immediate assistance
                   </p>
                   <p className="text-3xl font-bold text-medical-blue">
-                    +923106881824
+                    ‪+923106881824‬
                   </p>
                 </div>
               </div>
@@ -323,7 +322,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center w-full mb-16">
             <h2 className="text-4xl font-bold text-medical-blue mb-6">
-              Our Healthcare Services
+              Why Choose Us ?
             </h2>
           </div>
 
@@ -463,40 +462,36 @@ const Home = () => {
         </div>
       </section>
 
-     <section className="py-12 bg-white text-center">
-  <div className="container mx-auto px-4">
-    {/* Heading */}
-    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-medical-blue mb-4">
-      Our Lab Services
-    </h2>
-    <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-600">
-      Providing accurate, fast, and reliable laboratory testing with
-      state-of-the-art equipment.
-    </p>
+      <section className="py-12 bg-white text-center">
+        <div className="container mx-auto px-4">
+          {/* Heading */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-medical-blue mb-4">
+            Our Lab Services
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-600">
+            Providing accurate, fast, and reliable laboratory testing with
+            state-of-the-art equipment.
+          </p>
 
-    {/* Image with overlay */}
-    <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto transform hover:scale-105 transition duration-500">
-      <img
-        src={Labimg}
-        alt="Lab Services"
-        className="w-full h-auto object-cover"
-      />
-      <span className="absolute bottom-4  left-1/2 -translate-x-1/2 text-black py-2 ">
-        Islamabad I.D.C
-      </span>
-    </div>
+          {/* Image with overlay */}
+          <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto transform hover:scale-105 transition duration-500">
+            <img
+              src={Labimg}
+              alt="Lab Services"
+              className="w-full h-auto object-cover"
+            />
+          </div>
 
-    {/* Background Image Below */}
-    <div className="mt-8">
-      <img
-        src={IDCimgbg}
-        alt="IDC Background"
-        className="w-full h-auto object-cover rounded-lg shadow-md"
-      />
-    </div>
-  </div>
-</section>
-
+          {/* Background Image Below */}
+          <div className="mt-8">
+            <img
+              src={IDCimgbg}
+              alt="IDC Background"
+              className="w-full h-auto object-cover rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white">
