@@ -258,7 +258,7 @@ const Home = () => {
                   type="consultation"
                   size="lg"
                   variant="primary"
-                  className="rounded-lg w-full sm:w-auto"
+                  className="rounded-lg w-full sm:w-auto "
                 />
                 <AppointmentButton
                   type="appointment"
