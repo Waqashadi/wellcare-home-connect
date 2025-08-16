@@ -175,7 +175,7 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden border-t border-border animate-fade-in">
+            <div className="md:hidden border-t border-border animate-fade-in ">
               <nav className="py-4 space-y-4">
                 {navigation.map((item, index) => (
                   item.name === 'Services' ? (
