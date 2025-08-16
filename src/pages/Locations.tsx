@@ -41,7 +41,7 @@ const Locations = () => {
                     <h3 className="text-xl sm:text-3xl font-bold text-medical-blue mb-2 sm:mb-4">
                       📍 Office Location
                     </h3>
-                    <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
+                    <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 ">
                       I-10/3, Islamabad
                     </p>
 
