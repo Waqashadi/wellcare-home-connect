@@ -257,11 +257,7 @@ const Home = () => {
                   type="consultation"
                   size="lg"
                   variant="primary"
-<<<<<<< HEAD
                   className="rounded-lg  whitespace-nowrap w-[90%] sm:w-full mr-6 sm:m-0 "
-=======
-                  className="rounded-lg w-full sm:w-auto "
->>>>>>> cccd6454b6f8e05bc461adecb1b058f45c37151e
                 />
                 <AppointmentButton
                   type="appointment"
@@ -284,7 +280,7 @@ const Home = () => {
                     Call us anytime for immediate assistance
                   </p>
                   <p className="text-3xl font-bold text-medical-blue">
-                    ‪+923106881824‬
+                  +923106881824
                   </p>
                 </div>
               </div>
