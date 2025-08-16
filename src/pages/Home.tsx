@@ -257,18 +257,18 @@ const Home = () => {
                   type="consultation"
                   size="lg"
                   variant="primary"
-                  className="rounded-lg  whitespace-nowrap w-[90%] sm:w-full mr-6 sm:m-0 "
+                  className="rounded-lg  whitespace-nowrap w-[90%] sm:w-full  sm:m-0 "
                 />
                 <AppointmentButton
                   type="appointment"
                   size="lg"
                   variant="outline"
-                  className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))] w-[90%] sm:w-full mr-6 sm:m-0 whitespace-nowrap "
+                  className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))] w-[90%] sm:w-full sm:m-0 whitespace-nowrap "
                 />
               </div>
             </div>
             <div className="lg:text-right ">
-              <div className="inline-block bg-white rounded-2xl p-8 w-full sm:w-auto shadow-2xl ">
+              <div className="inline-block bg-white rounded-2xl p-4 sm:p-8 w-full sm:w-auto shadow-2xl ">
                 <div className="text-center space-y-4 ">
                   <div className="w-16 h-16 bg-accent-pink rounded-full flex items-center justify-center mx-auto">
                     <Phone className="h-8 w-8 text-white" />
