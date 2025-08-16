@@ -35,8 +35,8 @@ const Header = () => {
   return (
     <>
       {/* Sticky Mini Top Header */}
-      <div className="hidden md:block bg-gray-100 py-2 md:py-3 rounded-2xl m-2 md:m-4 sticky top-0 z-50">
-        <div className="container mx-auto px-2 md:px-4 rounded-lg m-1 md:m-2">
+      <div className="hidden md:block bg-gray-100 py-2 md:py-3 rounded-2xl md:m-4 sticky top-0 z-50">
+        <div className="container mx-auto px-2 md:px-4 rounded-lg ">
           <div className="flex flex-col md:flex-row justify-between items-center text-xs md:text-sm space-y-2 md:space-y-0 ">
             {/* Left Section - Location and Phone */}
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 md:space-x-8">
@@ -61,6 +61,7 @@ const Header = () => {
                   <div className="text-gray-600 text-md">0310-688-1824</div>
                 </div>
               </div>
+
             </div>
 
             {/* Right Section - Social Media and Button */}
@@ -88,6 +89,7 @@ const Header = () => {
                 </Button>
               </Link>
             </div>
+            
           </div>
         </div>
       </div>

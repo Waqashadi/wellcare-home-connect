@@ -253,18 +253,18 @@ const Home = () => {
                 your home. Our certified nurses provide personalized care to
                 help you live well every day.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col justify-between items-center sm:flex-row gap-4 w-full sm:w-auto">
                 <AppointmentButton
                   type="consultation"
                   size="lg"
                   variant="primary"
-                  className="rounded-lg"
+                  className="rounded-lg w-full sm:w-auto"
                 />
                 <AppointmentButton
                   type="appointment"
                   size="lg"
                   variant="outline"
-                  className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))]"
+                  className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))] w-full sm:w-auto"
                 />
               </div>
             </div>
