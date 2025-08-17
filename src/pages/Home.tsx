@@ -217,7 +217,7 @@ const Home = () => {
             />
           ))}
           {/* Gradient overlay for brand tint and contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-medical-blue/60 via-medical-blue/40 to-medical-pink/40" />
+          <div className="absolute inset-0 bg-gradient-to-br from-medical-blue/60 via-medical-blue/40 to-medical-pink/40 " />
           {/* Subtle dark overlay for text legibility */}
           <div className="absolute inset-0 bg-black/15 " />
         </div>
