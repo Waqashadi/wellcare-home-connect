@@ -5,7 +5,7 @@ const { writeFileSync, existsSync, mkdirSync } = require('fs');
 const path = require('path');
 
 
-const publicDir = path.join(__dirname, 'public');
+const publicDir = path.join(__dirname, 'public'); 
 if (!existsSync(publicDir)) {
   mkdirSync(publicDir);
 }
