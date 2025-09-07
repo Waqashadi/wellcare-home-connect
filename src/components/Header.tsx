@@ -7,7 +7,6 @@ import {
   Mail,
   MapPin,
   Facebook,
-  Twitter,
   Instagram,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -124,13 +123,13 @@ const Header = () => {
                       .href
                   }
                   alt="Wellcare Logo"
-                  className="h-20 w-auto max-sm:h-12"
+                  className="h-20 w-auto max-sm:h-12 max-md:h-16"
                 />
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-8 max-lg:space-x-2 max-lg:text-sm ">
               {navigation.map((item, index) => (
                 <div
                   key={item.name}
