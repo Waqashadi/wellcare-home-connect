@@ -185,124 +185,129 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with background slider */}
-      <section className="relative py-20 lg:py-32 overflow-hidden min-h-[80vh]">
-        {/* Sliding background images */}
-        <div className="absolute inset-0">
-          {heroImages.map((imgData, index) => (
-            <img
-              key={imgData.src}
-              src={encodeURI(imgData.src)}
-              alt={imgData.alt}
-              loading={index === activeHeroIndex ? "eager" : "lazy"}
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-                index === activeHeroIndex ? "opacity-100 kenburns" : "opacity-0"
-              }`}
-              aria-hidden={index !== activeHeroIndex}
-              onError={(e) => {
-                const target = e.currentTarget as HTMLImageElement;
-                // First fallback to a high-quality placeholder (distinct per index)
-                const fallbacks = [
-                  new URL("../assets/about-bg.jpg", import.meta.url).href,
-                  new URL("../assets/services-bg.jpg", import.meta.url).href,
-                  new URL("../assets/blog-bg.jpg", import.meta.url).href,
-                ];
-                if (!(target as any)._fallbackStage) {
-                  (target as any)._fallbackStage = 1;
-                  target.src = encodeURI(fallbacks[index % fallbacks.length]);
-                } else if ((target as any)._fallbackStage === 1) {
-                  (target as any)._fallbackStage = 2;
-                  target.src = encodeURI("/placeholder.svg");
-                }
-              }}
-            />
-          ))}
-          {/* Gradient overlay for brand tint and contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-medical-blue/60 via-medical-blue/40 to-medical-pink/40 " />
-          {/* Subtle dark overlay for text legibility */}
-          <div className="absolute inset-0 bg-black/15 " />
-        </div>
+    <section className="relative flex items-center overflow-hidden min-h-screen py-16 sm:py-20 lg:py-32">
+  {/* Sliding background images */}
+  <div className="absolute inset-0">
+    {heroImages.map((imgData, index) => (
+      <img
+        key={imgData.src}
+        src={encodeURI(imgData.src)}
+        alt={imgData.alt}
+        loading={index === activeHeroIndex ? "eager" : "lazy"}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+          index === activeHeroIndex ? "opacity-100 kenburns" : "opacity-0"
+        }`}
+        aria-hidden={index !== activeHeroIndex}
+        onError={(e) => {
+          const target = e.currentTarget as HTMLImageElement;
+          const fallbacks = [
+            new URL("../assets/about-bg.jpg", import.meta.url).href,
+            new URL("../assets/services-bg.jpg", import.meta.url).href,
+            new URL("../assets/blog-bg.jpg", import.meta.url).href,
+          ];
+          if (!(target as any)._fallbackStage) {
+            (target as any)._fallbackStage = 1;
+            target.src = encodeURI(fallbacks[index % fallbacks.length]);
+          } else if ((target as any)._fallbackStage === 1) {
+            (target as any)._fallbackStage = 2;
+            target.src = encodeURI("/placeholder.svg");
+          }
+        }}
+      />
+    ))}
+    {/* Gradient overlay for brand tint and contrast */}
+    <div className="absolute inset-0 bg-gradient-to-br from-medical-blue/40 via-medical-blue/30 to-medical-pink/30 sm:from-medical-blue/60 sm:via-medical-blue/40 sm:to-medical-pink/40" />
+    {/* Subtle dark overlay for text legibility */}
+    <div className="absolute inset-0 bg-black/5 sm:bg-black/15 lg:bg-black/20" />
+  </div>
 
-        {/* Dots indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveHeroIndex(index)}
-              className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                index === activeHeroIndex
-                  ? "bg-white"
-                  : "bg-white/50 hover:bg-white/80"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+  {/* Dots indicator */}
+  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+    {heroImages.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => setActiveHeroIndex(index)}
+        className={`h-2.5 w-2.5 rounded-full transition-colors ${
+          index === activeHeroIndex
+            ? "bg-white"
+            : "bg-white/50 hover:bg-white/80"
+        }`}
+        aria-label={`Go to slide ${index + 1}`}
+      />
+    ))}
+  </div>
+
+  {/* Content */}
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+      {/* Left content */}
+      <div className="text-white space-y-6">
+        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-shadow-lg">
+          Compassionate
+          <span className="block text-accent-pink text-shadow-lg">
+            Home Nursing
+          </span>
+          Care
+        </h1>
+        <p className="text-lg max-sm:text-sm text-white/90 leading-relaxed max-w-lg mx-auto lg:mx-0">
+          Professional healthcare services delivered in the comfort of your
+          home. Our certified nurses provide personalized care to help you
+          live well every day.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 w-full">
+          <AppointmentButton
+            type="consultation"
+            size="lg"
+            variant="primary"
+            className="rounded-lg whitespace-nowrap w-full sm:w-auto"
+          />
+          <AppointmentButton
+            type="appointment"
+            size="lg"
+            variant="outline"
+            className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))] w-full sm:w-auto whitespace-nowrap"
+          />
         </div>
-        <div className="container mx-auto px-4 relative z-10 pr-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-shadow-lg">
-                Compassionate
-                <span className="block text-accent-pink text-shadow-lg">
-                  Home Nursing
-                </span>
-                Care
-              </h1>
-              <p className="text-xl text-white/90 leading-relaxed pr-4">
-                Professional healthcare services delivered in the comfort of
-                your home. Our certified nurses provide personalized care to
-                help you live well every day.
-              </p>
-              <div className="flex flex-col justify-between items-center sm:flex-row gap-4 w-full sm:w-full ">
-                <AppointmentButton
-                  type="consultation"
-                  size="lg"
-                  variant="primary"
-                  className="rounded-lg  whitespace-nowrap w-[90%] sm:w-full  sm:m-0 "
-                />
-                <AppointmentButton
-                  type="appointment"
-                  size="lg"
-                  variant="outline"
-                  className="rounded-lg border-white text-white hover:bg-white hover:text-[hsl(var(--accent-pink))] w-[90%] sm:w-full sm:m-0 whitespace-nowrap "
-                />
-              </div>
+      </div>
+
+      {/* Right box */}
+      <div className="flex justify-center lg:justify-end">
+        <div className="inline-block bg-white rounded-2xl p-6 sm:p-8 w-full max-w-sm shadow-2xl">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 bg-accent-pink rounded-full flex items-center justify-center mx-auto">
+              <Phone className="h-8 w-8 text-white" />
             </div>
-            <div className="lg:text-right ">
-              <div className="inline-block bg-white rounded-2xl p-4 sm:p-8 w-full sm:w-auto shadow-2xl ">
-                <div className="text-center space-y-4 ">
-                  <div className="w-16 h-16 bg-accent-pink rounded-full flex items-center justify-center mx-auto">
-                    <Phone className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-medical-blue whitespace-nowrap">
-                    24/7 Emergency Care
-                  </h3>
-                  <p className="text-medical-gray">
-                    Call us anytime for immediate assistance
-                  </p>
-                  <p className="text-3xl font-bold text-medical-blue">
-                  +923106881824
-                  </p>
-                </div>
-              </div>
-            </div>
+            <h3 className="text-2xl font-bold text-medical-blue max-sm:text-lg">
+              24/7 Emergency Care
+            </h3>
+            <p className="text-medical-gray max-sm:text-sm">
+              Call us anytime for immediate assistance
+            </p>
+            <h3 className="text-3xl font-bold text-medical-blue max-sm:text-lg">
+              +923106881824
+            </h3>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Stats Section */}
       <section className="py-16 bg-medical-light-blue">
         <div className="container mx-auto px-4" ref={statsRef}>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center ">
                 <AnimatedCounter
                   target={stat.target}
                   suffix={stat.suffix}
                   start={statsInView}
                   durationMs={4000}
-                  className="text-4xl lg:text-5xl font-bold text-medical-blue mb-2 inline-block"
+                  className="text-4xl lg:text-5xl max-sm:text-2xl font-bold text-medical-blue mb-2 inline-block"
                 />
-                <div className="text-medical-gray font-medium">
+                <div className="text-medical-gray font-medium max-sm:text-sm">
                   {stat.label}
                 </div>
               </div>
@@ -321,7 +326,7 @@ const Home = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center w-full mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
+            <h2 className="text-4xl font-bold text-medical-blue mb-6 max-sm:text-3xl">
               Why Choose Us ?
             </h2>
           </div>
@@ -341,7 +346,7 @@ const Home = () => {
                     {service.title}
                   </h3>
                   <span className="mb-4 block h-0.5 w-8 mx-auto bg-accent-pink transform origin-center transition-transform duration-300 group-hover:scale-x-125 accent-on-hover-pink" />
-                  <p className="text-medical-gray leading-relaxed transition-colors duration-300 group-hover:text-white/90">
+                  <p className="text-medical-gray leading-relaxed transition-colors duration-300 group-hover:text-white/90 max-sm:text-sm">
                     {service.description}
                   </p>
                 </CardContent>
@@ -356,7 +361,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-medical-blue mb-8">
+              <h2 className="text-4xl font-bold text-medical-blue mb-8 max-sm:text-2xl">
                 Why Choose WellCare Home Nursing?
               </h2>
               <div className="space-y-6">
@@ -370,7 +375,7 @@ const Home = () => {
                 ].map((feature, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <CheckCircle className="h-6 w-6 text-accent-pink flex-shrink-0 mt-1" />
-                    <p className="text-medical-gray text-lg">{feature}</p>
+                    <p className="text-medical-gray text-lg max-sm:text-sm">{feature}</p>
                   </div>
                 ))}
               </div>
@@ -388,7 +393,7 @@ const Home = () => {
               </div>
             </div>
             <div className="lg:pl-8">
-              <div className="mb-8 bg-white rounded-2xl p-8 shadow-xl">
+              <div className="mb-8 bg-white rounded-2xl p-4 shadow-xl">
                 <img
                   src={
                     new URL("../assets/herobg (2).jpg", import.meta.url).href
@@ -397,10 +402,10 @@ const Home = () => {
                   loading="lazy"
                   className="w-full max-h-[380px] rounded-2xl object-cover shadow-2xl ring-1 ring-black/5"
                 />
-                <h3 className="text-2xl mt-4 font-bold text-medical-blue mb-6">
+                <h3 className="text-2xl mt-4 font-bold text-medical-blue mb-3 max-sm:text-lg">
                   Request a Free Consultation
                 </h3>
-                <p className="text-medical-gray mb-6">
+                <p className="text-medical-gray mb-6 max-sm:text-sm">
                   Let us assess your needs and create a personalized care plan
                   for you or your loved one.
                 </p>
@@ -423,10 +428,10 @@ const Home = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
+            <h2 className="text-4xl font-bold text-medical-blue mb-6 max-sm:text-2xl">
               What Our Families Say
             </h2>
-            <p className="text-xl text-medical-gray max-w-3xl mx-auto">
+            <p className="text-xl text-medical-gray max-w-3xl mx-auto max-sm:text-sm">
               Read testimonials from families who have experienced our
               compassionate care firsthand.
             </p>
@@ -444,14 +449,14 @@ const Home = () => {
                       />
                     ))}
                   </div>
-                  <p className="text-medical-gray mb-6 italic leading-relaxed">
+                  <p className="text-medical-gray mb-6 italic leading-relaxed max-sm:text-sm">
                     "{testimonial.content}"
                   </p>
                   <div>
                     <p className="font-bold text-medical-blue">
                       {testimonial.name}
                     </p>
-                    <p className="text-medical-gray text-sm">
+                    <p className="text-medical-gray text-sm max-sm:text-xs">
                       {testimonial.role}
                     </p>
                   </div>
@@ -465,10 +470,10 @@ const Home = () => {
       <section className="py-12 bg-white text-center">
         <div className="container mx-auto px-4">
           {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-medical-blue mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-medical-blue mb-4 max-sm:text-2xl">
             Our Lab Services
           </h2>
-          <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-600">
+          <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-600 max-sm:text-sm">
             Providing accurate, fast, and reliable laboratory testing with
             state-of-the-art equipment.
           </p>
@@ -496,10 +501,10 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6 max-sm:text-2xl">
             Ready to Experience Quality Home Care?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90 max-sm:text-sm">
             Contact us today to discuss your healthcare needs and learn how we
             can help you or your loved one live well every day.
           </p>

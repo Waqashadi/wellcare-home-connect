@@ -114,7 +114,7 @@ const Services = () => {
       >
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in max-sm:text-3xl">
               Our Healthcare Services
             </h1>
           </div>
@@ -225,14 +225,17 @@ const Services = () => {
         imageSrc={new URL('../assets/mission.jpg', import.meta.url).href}
       />
 
+
+
+
       {/* Specialty Services Section */}
-      <section className="py-20 bg-medical-light-blue">
+      <section className="py-20 bg-medical-light-blue max-sm:py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
+            <h2 className="text-4xl font-bold text-medical-blue mb-6 max-sm:text-2xl">
               Specialty Care Services
             </h2>
-            <p className="text-xl text-medical-gray max-w-3xl mx-auto">
+            <p className="text-xl text-medical-gray max-w-3xl mx-auto max-sm:text-sm">
               Additional specialized services to address specific healthcare needs and conditions.
             </p>
           </div>
@@ -240,14 +243,14 @@ const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {specialtyServices.map((service, index) => (
               <Card key={index} className="border-0 shadow-lg bg-white">
-                <CardContent className="p-8">
+                <CardContent className="p-6">
                   <div className="w-12 h-12 bg-medical-blue rounded-full flex items-center justify-center mb-4">
                     <Home className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-medical-blue mb-3">
+                  <h3 className="text-lg font-bold text-medical-blue mb-3 max-sm:text-md">
                     {service.title}
                   </h3>
-                  <p className="text-medical-gray leading-relaxed">
+                  <p className="text-medical-gray leading-relaxed max-sm:text-sm">
                     {service.description}
                   </p>
                 </CardContent>
@@ -258,13 +261,13 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20">
+      <section className="py-20 max-sm:py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
+            <h2 className="text-4xl font-bold text-medical-blue mb-6 max-sm:text-2xl">
               Our Care Process
             </h2>
-            <p className="text-xl text-medical-gray max-w-3xl mx-auto">
+            <p className="text-xl text-medical-gray max-w-3xl mx-auto max-sm:text-sm">
               We follow a systematic approach to ensure you receive the best possible care 
               tailored to your specific needs.
             </p>
@@ -297,10 +300,10 @@ const Services = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-medical-blue to-accent-pink rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-white font-bold text-lg">{step.step}</span>
                 </div>
-                <h3 className="text-xl font-bold text-medical-blue mb-4">
+                <h3 className="text-xl font-bold text-medical-blue mb-4 max-sm:text-lg">
                   {step.title}
                 </h3>
-                <p className="text-medical-gray leading-relaxed">
+                <p className="text-medical-gray leading-relaxed max-sm:text-sm">
                   {step.description}
                 </p>
               </div>
@@ -310,12 +313,12 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white">
+      <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white max-sm:py-10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6 max-sm:text-2xl">
             Ready to Get Started?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90 max-sm:text-sm">
             Contact us today to schedule a consultation and learn how our services 
             can benefit you or your loved one.
           </p>

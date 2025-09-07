@@ -38,10 +38,10 @@ const About = () => {
       >
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in max-sm:text-3xl">
               About WellCare Home Nursing
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed animate-fade-in" style={{ animationDelay: '200ms' }}>
+            <p className="text-xl text-white/90 leading-relaxed animate-fade-in max-sm:text-sm" style={{ animationDelay: '200ms' }}>
               With over a decade of experience, we've been providing compassionate, 
               professional home nursing care to families in our community.
             </p>
@@ -50,20 +50,20 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20">
+      <section className="py-20 max-sm:py-10">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-medical-blue mb-8">
+              <h2 className="text-4xl font-bold text-medical-blue mb-8 max-sm:mb-4 max-sm:text-2xl">
                 Our Mission
               </h2>
-              <p className="text-lg text-medical-gray leading-relaxed mb-6">
+              <p className="text-lg text-medical-gray leading-relaxed mb-6 max-sm:text-sm">
                 At WellCare Home Nursing, our mission is to provide exceptional, compassionate 
                 healthcare services in the comfort and privacy of your own home. We believe 
                 that quality healthcare should be accessible, personalized, and delivered with 
                 the highest level of professionalism.
               </p>
-              <p className="text-lg text-medical-gray leading-relaxed mb-8">
+              <p className="text-lg text-medical-gray leading-relaxed mb-8 max-sm:text-sm">
                 We are committed to helping individuals and families navigate their healthcare 
                 journey with dignity, respect, and peace of mind. Our goal is to enhance the 
                 quality of life for our patients while supporting their families through 
@@ -78,13 +78,13 @@ const About = () => {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="h-6 w-6 text-accent-pink" />
-                    <span className="text-medical-gray">{item}</span>
+                    <span className="text-medical-gray max-sm:text-sm">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="lg:pl-8">
-              <div className="bg-medical-light-blue rounded-2xl p-8">
+              <div className="bg-medical-light-blue rounded-2xl p-4">
                <img
                    src={new URL('../assets/herobg (2).jpg', import.meta.url).href}
                   alt="WellCare nurse providing attentive home care"
@@ -93,20 +93,20 @@ const About = () => {
                 />
                 <div className="grid grid-cols-2 mt-4 gap-6 text-center">
                   <div>
-                    <div className="text-3xl font-bold text-medical-blue mb-2">10+</div>
-                    <div className="text-medical-gray">Years Serving</div>
+                    <div className="text-3xl font-bold text-medical-blue mb-2 max-sm:text-2xl">10+</div>
+                    <div className="text-medical-gray max-sm:text-sm">Years Serving</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-medical-blue mb-2">500+</div>
-                    <div className="text-medical-gray">Families Helped</div>
+                    <div className="text-3xl font-bold text-medical-blue mb-2 max-sm:text-2xl">500+</div>
+                    <div className="text-medical-gray max-sm:text-sm">Families Helped</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-medical-blue mb-2">50+</div>
-                    <div className="text-medical-gray">Certified Nurses</div>
+                    <div className="text-3xl font-bold text-medical-blue mb-2 max-sm:text-2xl">50+</div>
+                    <div className="text-medical-gray max-sm:text-sm">Certified Nurses</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-medical-blue mb-2">99%</div>
-                    <div className="text-medical-gray">Satisfaction Rate</div>
+                    <div className="text-3xl font-bold text-medical-blue mb-2 max-sm:text-2xl">99%</div>
+                    <div className="text-medical-gray max-sm:text-sm">Satisfaction Rate</div>
                   </div>
                 </div>
               </div>
@@ -116,13 +116,13 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-medical-light-blue">
+      <section className="py-20 bg-medical-light-blue max-sm:py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
+            <h2 className="text-4xl font-bold text-medical-blue mb-6 max-sm:text-2xl">
               Our Core Values
             </h2>
-            <p className="text-xl text-medical-gray max-w-3xl mx-auto">
+            <p className="text-xl text-medical-gray max-w-3xl mx-auto max-sm:text-sm">
               These fundamental principles guide everything we do and shape the way 
               we deliver care to our patients and families.
             </p>
@@ -138,7 +138,7 @@ const About = () => {
                   <h3 className="text-xl font-bold text-medical-blue mb-4">
                     {value.title}
                   </h3>
-                  <p className="text-medical-gray leading-relaxed">
+                  <p className="text-medical-gray leading-relaxed max-sm:text-sm">
                     {value.description}
                   </p>
                 </CardContent>
@@ -149,13 +149,13 @@ const About = () => {
       </section>
 
       {/* Accreditation Section */}
-      <section className="py-20 bg-medical-light-blue">
+      <section className="py-20 bg-medical-light-blue max-sm:py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
+            <h2 className="text-4xl font-bold text-medical-blue mb-6 max-sm:text-lg max-sm:mt-[-20px]">
               Accreditations & Certifications
             </h2>
-            <p className="text-xl text-medical-gray max-w-3xl mx-auto">
+            <p className="text-xl text-medical-gray max-w-3xl mx-auto max-sm:text-sm">
               We maintain the highest standards of care through continuous education, 
               certification, and adherence to healthcare regulations.
             </p>
@@ -197,12 +197,12 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white">
+      <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white max-sm:py-10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6 max-sm:text-lg">
             Ready to Experience Our Care?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90 max-sm:text-sm">
             Contact us today to schedule a consultation and learn how our experienced team 
             can provide the care you or your loved one deserves.
           </p>

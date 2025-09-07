@@ -17,10 +17,10 @@ const PhysicalTherapy = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-3 max-sm:text-2xl">
               Physical Therapy
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-xl text-white/90 leading-relaxed max-sm:text-sm">
               Professional physical therapy services to restore mobility, strength, and function in the comfort of your home.
             </p>
           </div>
@@ -33,10 +33,10 @@ const PhysicalTherapy = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <div className="flex items-center justify-center mb-6">
-                <Activity className="h-12 w-12 text-medical-blue mr-4" />
-                <h2 className="text-3xl font-bold text-medical-blue">Home-Based Physical Therapy</h2>
+                <Activity className="h-12 w-12 text-medical-blue mr-4 max-sm:hidden" />
+                <h2 className="text-3xl font-bold text-medical-blue max-sm:text-lg">Home-Based Physical Therapy</h2>
               </div>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-600 text-lg max-sm:text-sm">
                 Our physical therapy services help patients recover from injuries, surgeries, and medical conditions 
                 through personalized exercise programs and therapeutic techniques delivered in your home environment.
               </p>
@@ -44,10 +44,10 @@ const PhysicalTherapy = () => {
 
             {/* What We Offer */}
             <Card className="mb-8">
-              <CardContent className="p-8">
+              <CardContent className="p-4">
                 <div className="flex items-center mb-6">
-                  <CheckCircle className="h-8 w-8 text-accent-pink mr-3" />
-                  <h3 className="text-2xl font-bold text-medical-blue">Our Physical Therapy Services</h3>
+                  <CheckCircle className="h-8 w-8 text-accent-pink mr-3 max-sm:hidden" />
+                  <h3 className="text-2xl font-bold text-medical-blue max-sm:text-lg">Our Physical Therapy Services</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
@@ -55,21 +55,21 @@ const PhysicalTherapy = () => {
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Mobility Assessment</h4>
-                        <p className="text-gray-600 text-sm">Comprehensive evaluation of movement and function</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Comprehensive evaluation of movement and function</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Exercise Programs</h4>
-                        <p className="text-gray-600 text-sm">Customized strengthening and flexibility exercises</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Customized strengthening and flexibility exercises</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Pain Management</h4>
-                        <p className="text-gray-600 text-sm">Therapeutic techniques to reduce pain and discomfort</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Therapeutic techniques to reduce pain and discomfort</p>
                       </div>
                     </div>
                   </div>
@@ -78,21 +78,21 @@ const PhysicalTherapy = () => {
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Balance Training</h4>
-                        <p className="text-gray-600 text-sm">Fall prevention and stability exercises</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Fall prevention and stability exercises</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Gait Training</h4>
-                        <p className="text-gray-600 text-sm">Walking and movement pattern improvement</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Walking and movement pattern improvement</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Home Safety</h4>
-                        <p className="text-gray-600 text-sm">Assessment and recommendations for home modifications</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Assessment and recommendations for home modifications</p>
                       </div>
                     </div>
                   </div>
@@ -102,10 +102,10 @@ const PhysicalTherapy = () => {
 
             {/* Conditions We Treat */}
             <Card className="mb-8">
-              <CardContent className="p-8">
+              <CardContent className="p-4">
                 <div className="flex items-center mb-6">
-                  <Target className="h-8 w-8 text-accent-pink mr-3" />
-                  <h3 className="text-2xl font-bold text-medical-blue">Conditions We Treat</h3>
+                  <Target className="h-8 w-8 text-accent-pink mr-3 max-sm:hidden" />
+                  <h3 className="text-2xl font-bold text-medical-blue max-sm:text-lg">Conditions We Treat</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
@@ -113,21 +113,21 @@ const PhysicalTherapy = () => {
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Post-Surgical Recovery</h4>
-                        <p className="text-gray-600 text-sm">Rehabilitation after orthopedic surgeries</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Rehabilitation after orthopedic surgeries</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Stroke Recovery</h4>
-                        <p className="text-gray-600 text-sm">Neurological rehabilitation and mobility training</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Neurological rehabilitation and mobility training</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Arthritis Management</h4>
-                        <p className="text-gray-600 text-sm">Joint mobility and pain relief exercises</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Joint mobility and pain relief exercises</p>
                       </div>
                     </div>
                   </div>
@@ -136,21 +136,21 @@ const PhysicalTherapy = () => {
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Balance Disorders</h4>
-                        <p className="text-gray-600 text-sm">Fall prevention and stability training</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Fall prevention and stability training</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Chronic Pain</h4>
-                        <p className="text-gray-600 text-sm">Pain management and functional improvement</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Pain management and functional improvement</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Elderly Care</h4>
-                        <p className="text-gray-600 text-sm">Age-related mobility and strength training</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Age-related mobility and strength training</p>
                       </div>
                     </div>
                   </div>
@@ -160,36 +160,36 @@ const PhysicalTherapy = () => {
 
             {/* Treatment Process */}
             <Card className="mb-8">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-medical-blue mb-6">Our Treatment Process</h3>
+              <CardContent className="p-4">
+                <h3 className="text-2xl font-bold text-medical-blue mb-6 max-sm:text-lg">Our Treatment Process</h3>
                 <div className="grid md:grid-cols-4 gap-6">
                   <div className="text-center">
                     <div className="bg-medical-light-blue p-4 rounded-lg mb-4">
                       <span className="text-2xl font-bold text-medical-blue">1</span>
                     </div>
                     <h4 className="font-semibold text-gray-800 mb-2">Assessment</h4>
-                    <p className="text-gray-600 text-sm">Evaluate mobility, strength, and functional abilities</p>
+                    <p className="text-gray-600 text-sm max-sm:text-xs">Evaluate mobility, strength, and functional abilities</p>
                   </div>
                   <div className="text-center">
                     <div className="bg-medical-light-blue p-4 rounded-lg mb-4">
                       <span className="text-2xl font-bold text-medical-blue">2</span>
                     </div>
                     <h4 className="font-semibold text-gray-800 mb-2">Plan</h4>
-                    <p className="text-gray-600 text-sm">Develop personalized treatment goals and plan</p>
+                    <p className="text-gray-600 text-sm max-sm:text-xs">Develop personalized treatment goals and plan</p>
                   </div>
                   <div className="text-center">
                     <div className="bg-medical-light-blue p-4 rounded-lg mb-4">
                       <span className="text-2xl font-bold text-medical-blue">3</span>
                     </div>
                     <h4 className="font-semibold text-gray-800 mb-2">Treatment</h4>
-                    <p className="text-gray-600 text-sm">Implement therapeutic exercises and techniques</p>
+                    <p className="text-gray-600 text-sm max-sm:text-xs">Implement therapeutic exercises and techniques</p>
                   </div>
                   <div className="text-center">
                     <div className="bg-medical-light-blue p-4 rounded-lg mb-4">
                       <span className="text-2xl font-bold text-medical-blue">4</span>
                     </div>
                     <h4 className="font-semibold text-gray-800 mb-2">Progress</h4>
-                    <p className="text-gray-600 text-sm">Monitor improvement and adjust treatment as needed</p>
+                    <p className="text-gray-600 text-sm max-sm:text-xs">Monitor improvement and adjust treatment as needed</p>
                   </div>
                 </div>
               </CardContent>
@@ -197,29 +197,29 @@ const PhysicalTherapy = () => {
 
             {/* Benefits */}
             <Card className="mb-8">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-medical-blue mb-6">Benefits of Home Physical Therapy</h3>
+              <CardContent className="p-4">
+                <h3 className="text-2xl font-bold text-medical-blue mb-6 max-sm:text-lg">Benefits of Home Physical Therapy</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Convenience</h4>
-                        <p className="text-gray-600 text-sm">Receive therapy in your familiar environment</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Receive therapy in your familiar environment</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Personalized Care</h4>
-                        <p className="text-gray-600 text-sm">Tailored to your specific needs and goals</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Tailored to your specific needs and goals</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Family Involvement</h4>
-                        <p className="text-gray-600 text-sm">Include family members in the recovery process</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Include family members in the recovery process</p>
                       </div>
                     </div>
                   </div>
@@ -228,21 +228,21 @@ const PhysicalTherapy = () => {
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Better Compliance</h4>
-                        <p className="text-gray-600 text-sm">Higher adherence to exercise programs</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Higher adherence to exercise programs</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Real Environment</h4>
-                        <p className="text-gray-600 text-sm">Practice in your actual living space</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Practice in your actual living space</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-accent-pink mr-3 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Cost Effective</h4>
-                        <p className="text-gray-600 text-sm">Often more affordable than clinic visits</p>
+                        <p className="text-gray-600 text-sm max-sm:text-xs">Often more affordable than clinic visits</p>
                       </div>
                     </div>
                   </div>
@@ -252,9 +252,9 @@ const PhysicalTherapy = () => {
 
             {/* CTA Section */}
             <Card className="mb-8">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-medical-blue mb-4">Start Your Recovery Journey</h3>
-                <p className="text-gray-600 mb-6">
+              <CardContent className="p-4 text-center">
+                <h3 className="text-2xl font-bold text-medical-blue mb-4 max-sm:text-lg">Start Your Recovery Journey</h3>
+                <p className="text-gray-600 mb-6 max-sm:text-sm">
                   Contact us to arrange physical therapy services and begin your path to improved mobility and function.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -267,34 +267,34 @@ const PhysicalTherapy = () => {
                     type="appointment"
                     size="lg"
                     variant="outline"
-                    className="border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white"
+                    className="bg-medical-blue whitespace-nowrap text-white"
                   />
                 </div>
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
+             {/* Contact Information */}
             <Card>
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <Phone className="h-8 w-8 text-accent-pink mr-3" />
-                  <h3 className="text-2xl font-bold text-medical-blue">Contact Us</h3>
+                  <Phone className="h-8 w-8 text-accent-pink mr-3 max-sm:hidden" />
+                  <h3 className="text-2xl font-bold text-medical-blue max-sm:text-lg">Contact Us</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-3">
                     <div className="flex items-center">
                       <Phone className="h-5 w-5 text-medical-blue mr-3" />
-                      <span className="text-gray-700">+923106881824</span>
+                      <span className="text-gray-700 max-sm:text-sm">+923106881824</span>
                     </div>
                     <div className="flex items-center">
                       <Mail className="h-5 w-5 text-medical-blue mr-3" />
-                      <span className="text-gray-700">infowellcares@gmail.com</span>
+                      <span className="text-gray-700 max-sm:text-sm">infowellcares@gmail.com</span>
                     </div>
                   </div>
                   <div className="text-gray-600">
-                    <p className="font-semibold">Service Areas:</p>
-                    <p>Rawalpindi & Islamabad, Pakistan</p>
-                    <p className="text-sm mt-2">24/7 Emergency Care Available</p>
+                    <p className="font-semibold mb-2">Service Areas:</p>
+                    <p className='max-sm:text-xs'>Islamabad, Rawalpindi</p>
+                    <p className="text-sm mt-2 max-sm:text-xs">24/7 Emergency Care Available</p>
                   </div>
                 </div>
               </CardContent>

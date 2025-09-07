@@ -22,14 +22,14 @@ export default function ServiceSectionBase({
   ctaLabel = "Book This Service",
 }: ServiceSectionBaseProps) {
   return (
-    <section id={id} className="py-16 scroll-mt-header">
+    <section id={id} className="py-16 scroll-mt-header max-sm:py-6">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-medical-blue mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-medical-blue mb-3 max-sm:text-xl">
               {title}
             </h2>
-            <p className="text-lg text-medical-gray leading-relaxed mb-6">
+            <p className="text-lg text-medical-gray leading-relaxed mb-6 max-sm:text-sm">
               {description}
             </p>
             {features.length > 0 && (
@@ -37,7 +37,7 @@ export default function ServiceSectionBase({
                 {features.map((f, i) => (
                   <div key={i} className="flex items-start space-x-3">
                     <CheckCircle className="h-6 w-6 text-accent-pink flex-shrink-0 mt-0.5" />
-                    <span className="text-medical-gray">{f}</span>
+                    <span className="text-medical-gray max-sm:text-sm">{f}</span>
                   </div>
                 ))}
               </div>

@@ -1,7 +1,16 @@
-import { useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Menu,
+  X,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,24 +21,30 @@ const Header = () => {
   const location = useLocation();
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Locations', href: '/locations' },
-    { name: 'Appointment', href: '/appointment' },
-    { name: 'Blog', href: '/blog' },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Locations", href: "/locations" },
+    { name: "Appointment", href: "/appointment" },
+    { name: "Blog", href: "/blog" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
 
   const handleServicesEnter = () => {
     if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
-    openTimerRef.current = window.setTimeout(() => setIsServicesOpen(true), 120);
+    openTimerRef.current = window.setTimeout(
+      () => setIsServicesOpen(true),
+      120
+    );
   };
 
   const handleServicesLeave = () => {
     if (openTimerRef.current) window.clearTimeout(openTimerRef.current);
-    closeTimerRef.current = window.setTimeout(() => setIsServicesOpen(false), 240);
+    closeTimerRef.current = window.setTimeout(
+      () => setIsServicesOpen(false),
+      240
+    );
   };
 
   return (
@@ -46,50 +61,52 @@ const Header = () => {
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-blue-900 text-lg">Our Locations</div>
-                  <div className="text-gray-600 text-md">Islamabad, Rawalpindi </div>
+                  <div className="font-bold text-blue-900 text-lg">
+                    Our Locations
+                  </div>
+                  <div className="text-gray-600 text-md">
+                    Islamabad, Rawalpindi{" "}
+                  </div>
                 </div>
               </div>
-              
+
               {/* Phone */}
               <div className="flex items-center space-x-2">
                 <div className="w-12 h-12 bg-accent-pink rounded-full flex items-center justify-center">
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-blue-900 text-lg">Phone Number</div>
+                  <div className="font-bold text-blue-900 text-lg">
+                    Phone Number
+                  </div>
                   <div className="text-gray-600 text-md">0310-688-1824</div>
                 </div>
               </div>
-
             </div>
+<div className="flex items-center space-x-2 md:space-x-4">
+  <div className="hidden sm:flex items-center space-x-2 md:space-x-3">
+    <a
+      href="https://www.facebook.com/share/1B3DFY1jfi/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-12 h-12 border border-accent-pink rounded-full flex items-center justify-center cursor-pointer hover:bg-accent-pink hover:scale-110 transition-all duration-300 group"
+    >
+      <Facebook className="h-6 w-6 text-accent-pink group-hover:text-white transition-colors duration-300" />
+    </a>
 
-            {/* Right Section - Social Media and Button */}
-            <div className="flex items-center space-x-2 md:space-x-4">
-                             {/* Social Media Icons - Hidden on very small screens */}
-               <div className="hidden sm:flex items-center space-x-2 md:space-x-3">
-                 <div className="w-12 h-12 border border-accent-pink rounded-full flex items-center justify-center cursor-pointer hover:bg-accent-pink hover:scale-110 transition-all duration-300 group">
-                   <Facebook className="h-6 w-6 text-accent-pink group-hover:text-white transition-colors duration-300" />
-                 </div>
-                 <div className="w-12 h-12 border border-accent-pink rounded-full flex items-center justify-center cursor-pointer hover:bg-accent-pink hover:scale-110 transition-all duration-300 group">
-                   <Twitter className="h-6 w-6 text-accent-pink group-hover:text-white transition-colors duration-300" />
-                 </div>
-                 <div className="w-12 h-12 border border-accent-pink rounded-full flex items-center justify-center cursor-pointer hover:bg-accent-pink hover:scale-110 transition-all duration-300 group">
-                   <Instagram className="h-6 w-6 text-accent-pink group-hover:text-white transition-colors duration-300" />
-                 </div>
-               </div>
-              
-              {/* Make Appointment Button */}
-              <Link to="/appointment" className="inline-flex">
-                <Button 
-                  className="bg-accent-pink hover:bg-pink-600 text-white font-bold p-6 rounded-lg text-lg"
-                >
-                  <span className="hidden sm:inline">Book Appointment</span>
-                  <span className="sm:hidden">Book Appointment</span>
-                </Button>
-              </Link>
-            </div>
-            
+    <a
+      href="https://www.instagram.com/wellcareshomenursing?igsh=eWZsaDB6anllMzZh"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-12 h-12 border border-accent-pink rounded-full flex items-center justify-center cursor-pointer hover:bg-accent-pink hover:scale-110 transition-all duration-300 group"
+    >
+      <Instagram className="h-6 w-6 text-accent-pink group-hover:text-white transition-colors duration-300" />
+    </a>
+  </div>
+</div>
+
+
+
           </div>
         </div>
       </div>
@@ -101,9 +118,15 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="">
               <div className=" flex items-center">
-                <img src={new URL('../assets/homeNursingLogo2.jpg', import.meta.url).href} alt="Wellcare Logo" className="h-20 w-auto" />
+                <img
+                  src={
+                    new URL("../assets/homeNursingLogo2.jpg", import.meta.url)
+                      .href
+                  }
+                  alt="Wellcare Logo"
+                  className="h-20 w-auto max-sm:h-12"
+                />
               </div>
-              
             </Link>
 
             {/* Desktop Navigation */}
@@ -112,38 +135,57 @@ const Header = () => {
                 <div
                   key={item.name}
                   className="relative"
-                  onMouseEnter={item.name === 'Services' ? handleServicesEnter : undefined}
-                  onMouseLeave={item.name === 'Services' ? handleServicesLeave : undefined}
+                  onMouseEnter={
+                    item.name === "Services" ? handleServicesEnter : undefined
+                  }
+                  onMouseLeave={
+                    item.name === "Services" ? handleServicesLeave : undefined
+                  }
                 >
                   <Link
                     to={item.href}
                     className={`text-gray-700 hover:text-[hsl(340,75%,65%)] transition-all duration-300 font-medium text-lg relative ${
-                      isActive(item.href) ? 'text-[hsl(340,75%,65%)]' : ''
+                      isActive(item.href) ? "text-[hsl(340,75%,65%)]" : ""
                     }`}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {item.name}
-                    <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[hsl(340,75%,65%)] transition-all duration-300 ${
-                      isActive(item.href) ? 'w-full' : 'group-hover:w-full'
-                    }`}></span>
+                    <span
+                      className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[hsl(340,75%,65%)] transition-all duration-300 ${
+                        isActive(item.href) ? "w-full" : "group-hover:w-full"
+                      }`}
+                    ></span>
                   </Link>
 
-                  {item.name === 'Services' && (
+                  {item.name === "Services" && (
                     <div
-                      className={`${isServicesOpen ? 'visible opacity-100' : 'invisible opacity-0'} absolute left-0 top-full mt-3 w-[360px] bg-white rounded-xl shadow-2xl ring-1 ring-black/5 p-3 transition-opacity duration-200`}
+                      className={`${
+                        isServicesOpen
+                          ? "visible opacity-100"
+                          : "invisible opacity-0"
+                      } absolute left-0 top-full mt-3 w-[360px] bg-white rounded-xl shadow-2xl ring-1 ring-black/5 p-3 transition-opacity duration-200`}
                       onMouseEnter={handleServicesEnter}
                       onMouseLeave={handleServicesLeave}
                     >
                       <div className="grid grid-cols-1 gap-2">
                         {[
-                          { id: 'home-injection', label: 'Home injection services' },
-                          { id: 'home-doctor', label: 'Home doctor visit' },
-                          { id: 'home-elderly', label: 'Home Elderly care' },
-                          { id: 'home-icu', label: 'Home ICU care' },
-                          { id: 'home-lab', label: 'Home lab test services' },
-                          { id: 'home-equipment', label: 'Home Medical Equipment' },
-                          { id: 'home-nursing', label: 'Home Nursing care' },
-                          { id: 'home-pharmacy', label: 'Home pharmacy services' },
+                          {
+                            id: "home-injection",
+                            label: "Home injection services",
+                          },
+                          { id: "home-doctor", label: "Home doctor visit" },
+                          { id: "home-elderly", label: "Home Elderly care" },
+                          { id: "home-icu", label: "Home ICU care" },
+                          { id: "home-lab", label: "Home lab test services" },
+                          {
+                            id: "home-equipment",
+                            label: "Home Medical Equipment",
+                          },
+                          { id: "home-nursing", label: "Home Nursing care" },
+                          {
+                            id: "home-pharmacy",
+                            label: "Home pharmacy services",
+                          },
                         ].map((s) => (
                           <Link
                             key={s.id}
@@ -177,9 +219,13 @@ const Header = () => {
           {isMenuOpen && (
             <div className="md:hidden border-t border-border animate-fade-in ">
               <nav className="py-4 space-y-4">
-                {navigation.map((item, index) => (
-                  item.name === 'Services' ? (
-                    <div key={item.name} className="px-2" style={{ animationDelay: `${index * 50}ms` }}>
+                {navigation.map((item, index) =>
+                  item.name === "Services" ? (
+                    <div
+                      key={item.name}
+                      className="px-2"
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
                       <button
                         className={`w-full text-left px-2 py-2 rounded-lg text-foreground hover:text-[hsl(340,75%,65%)] transition-all duration-300 font-medium`}
                         onClick={() => setIsServicesMobileOpen((v) => !v)}
@@ -189,20 +235,32 @@ const Header = () => {
                       {isServicesMobileOpen && (
                         <div className="mt-1 ml-2 space-y-1">
                           {[
-                            { id: 'home-injection', label: 'Home injection services' },
-                            { id: 'home-doctor', label: 'Home doctor visit' },
-                            { id: 'home-elderly', label: 'Home Elderly care' },
-                            { id: 'home-icu', label: 'Home ICU care' },
-                            { id: 'home-lab', label: 'Home lab test services' },
-                            { id: 'home-equipment', label: 'Home Medical Equipment' },
-                            { id: 'home-nursing', label: 'Home Nursing care' },
-                            { id: 'home-pharmacy', label: 'Home pharmacy services' },
+                            {
+                              id: "home-injection",
+                              label: "Home injection services",
+                            },
+                            { id: "home-doctor", label: "Home doctor visit" },
+                            { id: "home-elderly", label: "Home Elderly care" },
+                            { id: "home-icu", label: "Home ICU care" },
+                            { id: "home-lab", label: "Home lab test services" },
+                            {
+                              id: "home-equipment",
+                              label: "Home Medical Equipment",
+                            },
+                            { id: "home-nursing", label: "Home Nursing care" },
+                            {
+                              id: "home-pharmacy",
+                              label: "Home pharmacy services",
+                            },
                           ].map((s) => (
                             <Link
                               key={s.id}
                               to={`/services#${s.id}`}
                               className="block px-4 py-3 rounded-lg text-lg text-medical-blue hover:bg-medical-blue hover:text-white transition-colors"
-                              onClick={() => { setIsMenuOpen(false); setIsServicesMobileOpen(false); }}
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setIsServicesMobileOpen(false);
+                              }}
                             >
                               {s.label}
                             </Link>
@@ -215,7 +273,9 @@ const Header = () => {
                       key={item.name}
                       to={item.href}
                       className={`block px-4 py-2 text-foreground hover:text-[hsl(340,75%,65%)] transition-all duration-300 font-medium animate-fade-in ${
-                        isActive(item.href) ? 'text-[hsl(340,75%,65%)] bg-secondary' : ''
+                        isActive(item.href)
+                          ? "text-[hsl(340,75%,65%)] bg-secondary"
+                          : ""
                       }`}
                       style={{ animationDelay: `${index * 50}ms` }}
                       onClick={() => setIsMenuOpen(false)}
@@ -223,7 +283,7 @@ const Header = () => {
                       {item.name}
                     </Link>
                   )
-                ))}
+                )}
               </nav>
             </div>
           )}

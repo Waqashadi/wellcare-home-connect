@@ -18,10 +18,10 @@ const Locations = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-3 max-sm:text-3xl">
               Our Locations
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <p className="text-xl text-white/90 leading-relaxed max-sm:text-sm">
               We currently serve patients across Rawalpindi and Islamabad with
               fast response times.
             </p>
@@ -41,14 +41,14 @@ const Locations = () => {
                     <h3 className="text-xl sm:text-3xl font-bold text-medical-blue mb-2 sm:mb-4">
                       📍 Office Location
                     </h3>
-                    <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 ">
+                    <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 max-sm:text-sm">
                       I-10/3, Islamabad
                     </p>
 
                     {/* Phone */}
                     <div className="flex items-center justify-center text-medical-gray py-2 sm:py-3 px-4 sm:px-5 w-fit mx-auto whitespace-nowrap">
                       <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-accent-pink mr-2" />
-                      <span className="text-base sm:text-xl font-semibold">
+                      <span className="text-base sm:text-xl font-bold">
                         +92 310 6881824
                       </span>
                     </div>
@@ -89,8 +89,8 @@ const Locations = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Need Care in Your Area?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
+          <h2 className="text-4xl font-bold mb-6 max-sm:text-xl">Need Care in Your Area?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90 max-sm:text-sm">
             Contact us today to schedule a consultation and learn how we can
             provide professional home nursing care in your location.
           </p>

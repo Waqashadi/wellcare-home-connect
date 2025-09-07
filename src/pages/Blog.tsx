@@ -91,10 +91,10 @@ const Blog = () => {
       >
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-3 animate-fade-in max-sm:text-2xl">
               WellCare Health Blog
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed animate-fade-in" style={{ animationDelay: '200ms' }}>
+            <p className="text-xl text-white/90 leading-relaxed animate-fade-in max-sm:text-sm" style={{ animationDelay: '200ms' }}>
               Expert insights, practical tips, and valuable information about home nursing care, 
               health management, and wellness for you and your family.
             </p>
@@ -103,10 +103,10 @@ const Blog = () => {
       </section>
 
       {/* Featured Post */}
-      <section className="py-20">
+      <section className="py-20 max-sm:py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
+            <h2 className="text-4xl font-bold text-medical-blue mb-4 max-sm:text-2xl">
               Featured Article
             </h2>
           </div>
@@ -116,20 +116,20 @@ const Blog = () => {
               <div className="relative h-64 lg:h-80 overflow-hidden">
                 <img src={featuredPost.image} alt={featuredPost.title} className="h-full w-full object-cover" />
               </div>
-              <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
+              <CardContent className="p-4 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center space-x-4 mb-4">
-                  <span className="bg-accent-pink text-accent-pink-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-accent-pink text-accent-pink-foreground px-4 py-2 rounded-full text-sm font-semibold max-sm:text-xm">
                     {featuredPost.category}
                   </span>
-                  <div className="flex items-center text-medical-gray text-sm">
+                  <div className="flex items-center text-medical-gray text-sm max-sm:text-xs">
                     <Clock className="h-4 w-4 mr-1" />
                     {featuredPost.readTime}
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold text-medical-blue mb-4">
+                <h3 className="text-3xl font-bold text-medical-blue mb-4 max-sm:text-2xl">
                   {featuredPost.title}
                 </h3>
-                <p className="text-medical-gray text-lg leading-relaxed mb-6">
+                <p className="text-medical-gray text-lg leading-relaxed mb-6 max-sm:text-sm">
                   {featuredPost.excerpt}
                 </p>
                 <div className="flex items-center justify-between mb-6">
@@ -139,7 +139,7 @@ const Blog = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-medical-blue">{featuredPost.author}</p>
-                      <p className="text-medical-gray text-sm">{featuredPost.date}</p>
+                      <p className="text-medical-gray text-sm max-sm:text-xs">{featuredPost.date}</p>
                     </div>
                   </div>
                 </div>
@@ -159,13 +159,13 @@ const Blog = () => {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-20">
+      <section className="py-20 max-sm:py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-medical-blue mb-6">
+            <h2 className="text-4xl font-bold text-medical-blue mb-3 max-sm:text-2xl">
               Latest Articles
             </h2>
-            <p className="text-xl text-medical-gray max-w-3xl mx-auto">
+            <p className="text-xl text-medical-gray max-w-3xl mx-auto max-sm:text-sm">
               Stay informed with our latest insights on home healthcare, nursing best practices, 
               and tips for maintaining wellness at home.
             </p>
@@ -178,7 +178,7 @@ const Blog = () => {
                   <div className="relative h-48 overflow-hidden">
                     <img src={post.image as any} alt={post.title} className="h-full w-full object-cover" />
                   </div>
-                  <div className="p-6">
+                  <div className="p-2">
                     <div className="flex items-center justify-between mb-3">
                       <span className="bg-medical-blue/10 text-medical-blue px-2 py-1 rounded text-xs font-semibold">
                         {post.category}
@@ -225,18 +225,18 @@ const Blog = () => {
       </section>
 
       {/* Newsletter Subscription */}
-      <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white">
+      <section className="py-20 bg-gradient-to-r from-medical-blue to-accent-pink text-white max-sm:py-10">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-6 max-sm:text-2xl">
                Caring Starts With a Conversation
             </h2>
-            <p className="text-xl mb-8 text-white/90">
+            <p className="text-xl mb-8 text-white/90 max-sm:text-sm">
               Get the latest health tips, care updates, and expert insights delivered 
               directly to your inbox every month.
             </p>
             
-            <p className="text-white/70 text-sm mt-4">
+            <p className="text-white/70 text-sm mt-4 max-sm:text-sm">
               No spam, unsubscribe anytime. Your privacy is important to us.
             </p>
           </div>
