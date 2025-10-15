@@ -23,11 +23,13 @@ import PhysicalTherapy from "./pages/services/PhysicalTherapy";
 import WhatsAppButton from "./components/WhatsAppButton";
 import CallButton from "./components/CallButton";
 import ScrollManager from "./components/ScrollManager";
+import GTMListener from "./GTMListener"
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <GTMListener/>
     <TooltipProvider>
       <Toaster />
       <Sonner />
