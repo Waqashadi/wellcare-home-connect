@@ -29,11 +29,11 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <GTMListener/>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+    <GTMListener/>
         <div className="flex flex-col min-h-screen">
           <ScrollManager />
           <Header />
