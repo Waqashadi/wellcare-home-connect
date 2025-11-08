@@ -1,6 +1,7 @@
 import { Mail, Phone, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Helmet } from "react-helmet-async";
 
 const APPOINTMENT_EMAIL = 'infowellcares@gmail.com';
 const APPOINTMENT_PHONE_DISPLAY = '+923106881824';
@@ -13,6 +14,22 @@ const Appointment = () => {
   const waHref = `https://wa.me/${WHATSAPP_NUMBER_SANITIZED}?text=${encodeURIComponent('Hello! I would like to book an appointment with WellCare Home Nursing.')}`;
 
   return (
+    <>
+
+     <Helmet>
+        <title>Book an Appointment | WellCare Home Nursing</title>
+        <meta
+          name="description"
+          content="Schedule your appointment with WellCare Home Nursing for professional, compassionate care at your doorstep. Contact us via email, phone, or WhatsApp."
+        />
+        <meta
+          name="keywords"
+          content="appointment, home nursing appointment, book appointment, WellCare Home Nursing, contact, nursing care"
+        />
+        <link rel="canonical" href="https://wellcareshomenursing.com/appointment" />
+      </Helmet>
+    
+   
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-20 text-white overflow-hidden">
@@ -73,6 +90,8 @@ Call us or book online for a hassle-free experience.</p>
         </div>
       </section>
     </div>
+
+     </>
   );
 };
 

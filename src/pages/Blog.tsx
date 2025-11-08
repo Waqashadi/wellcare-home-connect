@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import blogBg from '@/assets/blog-bg.jpg';
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
   const featuredPost = {
@@ -81,6 +82,21 @@ const Blog = () => {
 
 
   return (
+    <>
+    
+     <Helmet>
+        <title>WellCare Health Blog | Expert Tips & Home Nursing Care</title>
+        <meta
+          name="description"
+          content="Stay informed with expert insights, practical tips, and valuable information about home nursing care, health management, and wellness for you and your family."
+        />
+        <meta
+          name="keywords"
+          content="home nursing care, health blog, WellCare, health tips, home healthcare, nursing tips, wellness"
+        />
+        <link rel="canonical" href="https://wellcareshomenursing.com/blog" />
+      </Helmet>
+   
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
@@ -243,6 +259,7 @@ const Blog = () => {
         </div>
       </section>
     </div>
+     </>
   );
 };
 

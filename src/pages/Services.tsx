@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import servicesBg from '@/assets/services-bg.jpg';
 import { ServiceSectionBase } from '@/components/services';
 import AppointmentButton from '@/components/AppointmentButton';
+import { Helmet } from "react-helmet-async";
 
 const Services = () => {
   const mainServices = [
@@ -104,6 +105,21 @@ const Services = () => {
   ];
 
   return (
+    <>
+
+    <Helmet>
+        <title>Our Home Nursing Services | WellCare Home Nursing</title>
+        <meta
+          name="description"
+          content="Explore WellCare Home Nursing's wide range of professional healthcare services — including skilled nursing care, post-surgical recovery, wound care, physical therapy, and more — all delivered at your home."
+        />
+        <meta
+          name="keywords"
+          content="home nursing services, WellCare Home Nursing, skilled nursing care, wound care, physical therapy, Pakistan home healthcare"
+        />
+        <link rel="canonical" href="https://wellcareshomenursing.com/services" />
+      </Helmet>
+
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
@@ -339,6 +355,7 @@ const Services = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

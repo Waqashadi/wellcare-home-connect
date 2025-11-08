@@ -2,6 +2,7 @@ import { Users, Award, Heart, Shield, Target, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import aboutBg from '@/assets/about-bg.jpg';
 import AppointmentButton from '@/components/AppointmentButton';
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   const values = [
@@ -28,6 +29,18 @@ const About = () => {
   ];
 
   return (
+    <>
+     
+       <Helmet>
+      <title>About Us | WellCare Home Nursing</title>
+      <meta
+        name="description"
+        content="Learn about WellCare Home Nursing's mission to provide compassionate and professional home healthcare across Pakistan."
+      />
+      <link rel="canonical" href="https://wellcareshomenursing.com/about" />
+    </Helmet>
+
+
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
@@ -223,6 +236,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

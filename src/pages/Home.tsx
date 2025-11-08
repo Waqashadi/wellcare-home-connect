@@ -16,6 +16,7 @@ import AppointmentButton from "@/components/AppointmentButton";
 import Services from "./Services";
 import Labimg from "@/assets/Labimg.jpg";
 import IDCimgbg from "@/assets/IDCimgbg.jpg";
+import { Helmet } from "react-helmet-async";
 
 // Smooth easing for counters
 function easeOutCubic(t: number): number {
@@ -183,6 +184,17 @@ const Home = () => {
   }, []);
 
   return (
+    <> 
+      <Helmet>
+    <title>WellCare Home Nursing | Compassionate In-Home Healthcare</title>
+    <meta
+      name="description"
+      content="Professional healthcare services delivered in the comfort of your home by certified nurses. Compassionate care for you and your loved ones."
+    />
+    <meta name="keywords" content="home nursing, healthcare, nursing care, WellCare" />
+    <link rel="canonical" href="https://wellcare.com/" />
+  </Helmet>
+      
     <div className="min-h-screen">
       {/* Hero Section with background slider */}
     <section className="relative flex items-center overflow-hidden min-h-screen py-16 sm:py-20 lg:py-32">
@@ -528,6 +540,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

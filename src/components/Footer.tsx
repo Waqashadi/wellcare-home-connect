@@ -140,6 +140,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
+       <p className="text-gray-400 text-xs md:text-sm">
+  Developed By:{" "}
+  <a href="..." target="_blank" rel="noopener noreferrer" className="hover:text-accent-pink font-bold">
+    Muhammad Waqas
+  </a>
+</p>
+
       </div>
     </footer>
   );

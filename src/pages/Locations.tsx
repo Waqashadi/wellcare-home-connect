@@ -2,9 +2,25 @@ import { MapPin, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import AppointmentButton from "@/components/AppointmentButton";
+import { Helmet } from "react-helmet-async";
 
 const Locations = () => {
   return (
+    <>
+
+      <Helmet>
+        <title>Our Locations | WellCare Home Nursing</title>
+        <meta
+          name="description"
+          content="WellCare Home Nursing serves patients across Rawalpindi and Islamabad with fast, professional home nursing care. Find our office location and contact details here."
+        />
+        <meta
+          name="keywords"
+          content="home nursing care, locations, Rawalpindi, Islamabad, WellCare Home Nursing, professional nursing"
+        />
+        <link rel="canonical" href="https://wellcareshomenursing.com/locations" />
+      </Helmet>    
+   
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 text-white overflow-hidden">
@@ -111,6 +127,7 @@ const Locations = () => {
         </div>
       </section>
     </div>
+     </>
   );
 };
 
