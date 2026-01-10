@@ -10,9 +10,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center ml-2 ">
-              <img 
-                src={homeNursingLogo2} 
-                alt="WellCare Home Nursing" 
+              <img
+                src={homeNursingLogo2}
+                alt="WellCare Home Nursing"
                 className="h-16 w-auto rounded-lg hover:scale-105 transition-transform duration-300"
               />
             </div>
@@ -23,11 +23,11 @@ const Footer = () => {
               <a href="https://www.facebook.com/share/1B3DFY1jfi/" className="text-gray-300 hover:text-accent-pink hover:scale-110 transition-all duration-300 cursor-pointer">
                 <Facebook className="h-6 w-6" />
               </a>
-              
+
               <a href="https://www.instagram.com/wellcareshomenursing?igsh=eWZsaDB6anllMzZh" className="text-gray-300 hover:text-accent-pink hover:scale-110 transition-all duration-300 cursor-pointer">
                 <Instagram className="h-6 w-6" />
               </a>
-             
+
             </div>
           </div>
 
@@ -140,12 +140,12 @@ const Footer = () => {
             </div>
           </div>
         </div>
-       <p className="text-gray-400 text-xs md:text-sm">
-  Developed By:{" "}
-  <a href="..." target="_blank" rel="noopener noreferrer" className="hover:text-accent-pink font-bold">
-    Muhammad Waqas
-  </a>
-</p>
+        <p className="text-gray-400 text-xs md:text-sm sm:text-center sm:my-4">
+          Developed By:{" "}
+          <a href="https://www.linkedin.com/in/waqashadi" target="_blank" rel="noopener noreferrer" className="hover:text-accent-pink font-bold">
+            Muhammad Waqas
+          </a>
+        </p>
 
       </div>
     </footer>
